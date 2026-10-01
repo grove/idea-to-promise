@@ -1,171 +1,131 @@
 # Idea to Promise
 
-Turn an uncertain idea into a researched, explicit promise worth making.
+Turn a rough idea into a decision you understand and a promise worth making.
 
-**Idea to Promise → Promise to Proof**
-
-Idea to Promise (ITP) helps decide **what to promise, and why**. Its sibling,
-[Promise to Proof](https://github.com/grove/promise-to-proof), turns that agreed
-outcome into an acceptance contract, implements it, reviews it, and proves the
-result.
-
-ITP can also end in a bounded experiment, a deferred decision, or a deliberate
-choice not to build. Research is not permission to implement.
-
-## Start here
+Start with an idea, not a form:
 
 ```text
-/discover We need to make retries safe for uploads over unreliable networks.
+/discover quick We keep losing report filters when exporting. Is a small fix worthwhile?
 ```
 
-For stage-by-stage work:
+ITP helps clarify the need, explore real alternatives, investigate important
+uncertainty and record **your** choice. The result can be a promise, a bounded
+experiment, a deferral, or a deliberate decision not to build.
 
-```text
-/frame <idea or notes>
-/brainstorm <framing>
-/research <questions or alternatives>
-/decide <research>
-/challenge-decision <decision record>
-/shape-promise <decision record>
-```
+**Idea to Promise decides what is worth promising. [Promise to Proof](https://github.com/grove/promise-to-proof)
+plans acceptance, implements, reviews and proves the agreed behavior.**
 
-These are agent skills, not shell commands.
+## Get started
 
-## Seven skills
-
-| Skill | Main question |
-|---|---|
-| [`frame`](skills/productivity/frame/SKILL.md) | What progress is someone actually trying to make, and what happens today? |
-| [`brainstorm`](skills/productivity/brainstorm/SKILL.md) | What underlying opportunities exist, and what genuinely different solutions could address them? |
-| [`research`](skills/productivity/research/SKILL.md) | Which load-bearing assumptions are weakly evidenced, and what should we learn first? |
-| [`decide`](skills/productivity/decide/SKILL.md) | Given the evidence and our appetite, what do we choose? |
-| [`challenge-decision`](skills/productivity/challenge-decision/SKILL.md) | What could blow up the decision or make it fail? |
-| [`shape-promise`](skills/productivity/shape-promise/SKILL.md) | What future experience are we actually willing to promise? |
-| [`discover`](skills/productivity/discover/SKILL.md) | How do we guide the whole discovery loop? |
-
-The stages are intentionally not rigid. New evidence may send the work back to
-framing, opportunities, or research. A no-build result is valid.
-
-## The v0.4 discovery loop
-
-```text
-real need / job
-      ↓
-opportunity space
-      ↓
-solution alternatives
-      ↓
-riskiest assumptions
-      ↓
-research ↔ bounded experiment
-      ↓
-human decision + appetite
-      ↓
-rabbit holes + premortem (when useful)
-      ↓
-future-experience check
-      ↓
-exact approved promise
-      ↓
-Promise to Proof
-```
-
-The main ideas are simple:
-
-- Understand the real progress sought before discussing features.
-- Explore the problem/opportunity space before the solution space.
-- Research the weakest load-bearing assumptions first.
-- Decide how much the outcome is worth before accepting complexity.
-- Try to explain how the decision could fail before committing.
-- Make sure the promised future is actually better for the beneficiary.
-
-## Work-item model
-
-Active discovery state lives locally under:
-
-```text
-.itp/work/<slug>/
-├── frame.md
-├── alternatives.md
-├── research.md
-├── experiments/
-├── decision.md
-├── challenge.md
-├── promise-draft.md
-├── approval.md
-└── handoff.md
-```
-
-The final agreed promise is a normal project-owned source document, commonly
-`specs/<slug>.md`. It must stand on its own.
-
-See the [artifact format](docs/artifact-format.md),
-[discovery protocol](docs/discovery-protocol.md), and
-[workflow guide](docs/how-to.md).
-
-## Research discipline
-
-Research uses stable claim IDs C1, C2, ... and now also records:
-
-- **criticality** — how much the decision depends on the claim,
-- **evidence strength** — how well it is supported,
-- **risk lens** — e.g. desirability, feasibility, viability, adaptability, compliance.
-
-ITP prioritizes high-criticality claims with weak/no evidence rather than
-researching everything equally.
-
-Experiments precommit to the observation, decision rule, and stop condition before
-the result is known.
-
-## Decision discipline
-
-`/decide` separates evidence from preference and asks the human to set an
-**appetite**: how much effort, complexity, operational burden, or experiment risk
-the outcome is worth. Appetite is a decision boundary, not an implementation
-estimate.
-
-For consequential choices, `/challenge-decision` looks for concrete rabbit holes
-and runs a grounded premortem: assume the decision failed and ask why.
-
-## Promise discipline
-
-Before drafting, `/shape-promise` works backwards from the beneficiary's future
-experience. If the promise cannot explain what is meaningfully better without
-falling back to implementation details, it is not ready.
-
-Promises retain exact-byte SHA-256 identity and explicit approval before handoff
-to P2P.
-
-## Handoff to Promise to Proof
-
-After exact source approval and a matching identity:
-
-```text
-/plan-acceptance specs/<slug>.md
-```
-
-ITP does not create the P2P acceptance contract or authorize implementation.
-
-## Install
+Install through the skills installer:
 
 ```bash
 npx skills@latest add grove/idea-to-promise
 ```
 
-## Checks
+Then, in your agent's skill interface:
 
-Requires Python 3.11+ and no third-party Python packages:
+```text
+/setup-idea-to-promise
+/discover <your idea>
+```
+
+Setup is optional. It previews creation of ignored `.itp/work/` storage and
+preserves existing source/spec conventions. Skills are agent instructions, not
+shell commands; invocation syntax depends on the host. Manual installation means
+copying an entire skill folder, including its references, templates and scripts.
+Each skill is packaged independently; a sibling checkout is not required.
+
+## One umbrella, useful stages
+
+| Skill | Use it to |
+|---|---|
+| [discover](skills/productivity/discover/SKILL.md) | Guide the conversation end to end, or resume/revisit it |
+| [frame](skills/productivity/frame/SKILL.md) | Understand the real need and today's workaround |
+| [brainstorm](skills/productivity/brainstorm/SKILL.md) | Explore opportunities, then distinct approaches |
+| [research](skills/productivity/research/SKILL.md) | Investigate the weakest important assumptions |
+| [decide](skills/productivity/decide/SKILL.md) | Explain tradeoffs and record the human choice |
+| [challenge-decision](skills/productivity/challenge-decision/SKILL.md) | Optionally check material risks and hidden complexity |
+| [shape-promise](skills/productivity/shape-promise/SKILL.md) | Write and verify the exact source handoff |
+| [setup-idea-to-promise](skills/productivity/setup-idea-to-promise/SKILL.md) | Prepare local storage without changing product files |
+
+These are not eight mandatory steps. Start where the uncertainty is.
+
+## Enough rigor, not more paperwork
+
+**Quick:** a small reversible question, often one `discovery.md` notebook.
+**Normal:** separate records only where useful.
+**Deep:** more investigation for consequential uncertainty.
+
+Modes never waive honest evidence, human choice, or exact source approval. They
+are not fixed durations or spending guarantees. Supplied decisions and appetite
+are reused rather than asked for again. An existing solution is a valid finish.
+
+```text
+/discover normal <idea>
+/discover deep <idea>; research budget: <your limit>
+/discover resume .itp/work/<slug>
+/discover revisit specs/<slug>.md
+```
+
+A revisit preserves the old approved promise while any replacement is pending.
+Past P2P delivery experience can inform research, but never automatically becomes
+new scope. No background work or autonomous controller is implied.
+
+## See the whole conversation
+
+[Six worked examples](examples/README.md) show a quick improvement, a bad feature
+idea, an experiment-first technical choice, an existing-solution/no-build outcome,
+a choice changed after challenge, and a revisit with a P2P handoff. They are
+explicitly fictional teaching examples, **not live evaluations or customer evidence**.
+
+For the practical workflow see [the how-to](docs/how-to.md). For persistence,
+approval and amendments see [the protocol](docs/discovery-protocol.md) and
+[artifact format](docs/artifact-format.md).
+
+## Trust the handoff, not a green checkbox
+
+The final source is a normal project-owned file such as `specs/<slug>.md`.
+A human approves its exact saved bytes; approval lives in a separate receipt.
+Any byte change needs renewed approval. P2P still has its own contract approval.
 
 ```bash
+python3 scripts/promise_identity.py specs/<slug>.md
+python3 scripts/check_work_item.py .itp/work/<slug> \
+  --promise specs/<slug>.md --handoff
+```
+
+The checker requires matching source paths, revisions, identities and a retrievable
+approval receipt in handoff mode. **It checks consistency, not whether the evidence
+is good, the approver is authentic, or the work is ready to implement.** See
+[portable handoffs](docs/p2p-handoff.md); ignored files do not travel through Git.
+
+## Evaluate behavior, honestly
+
+The [evaluation kit](evaluations/README.md) includes multi-turn cases, a host-neutral
+adapter interface, exact instruction snapshots, virtual file captures, mechanical
+checks and an evidence-linked human review form. The umbrella skill is tested
+separately from individual stages.
+
+```bash
+python3 scripts/evaluate.py prepare --out .itp/evals/first
+```
+
+Preparing cases does not run a model. Live capture requires a configured trusted
+host adapter. Fixture execution, live-labelled captures and human judgments remain
+separate; unassessed criteria never turn into passes. See [current evidence and
+limits](docs/validation.md).
+
+## Contributor checks
+
+Python 3.11+ and Git; no third-party Python packages or model credentials:
+
+```bash
+python3 scripts/sync_skill_resources.py --check
 python3 -m unittest discover -s checks -p 'test_*.py' -v
 ```
 
-The [behavior scenarios](checks/scenarios.md) are evaluation cases for live
-agents. Passing unit tests does not prove good product judgment.
-
-## Contributing and license
-
-Read [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md), and the
-[Changelog](CHANGELOG.md).
-
-Apache-2.0. See [LICENSE](LICENSE).
+Edit canonical resources, regenerate packaged copies, and test before publishing.
+Read [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md),
+[SECURITY.md](SECURITY.md), and [CHANGELOG.md](CHANGELOG.md).
+Apache-2.0; see [LICENSE](LICENSE).

@@ -1,87 +1,61 @@
 ---
 name: discover
-description: Guide an idea through need framing, opportunity exploration, risk-prioritized research, explicit human decision with appetite, optional premortem challenge, and exact source-promise approval before Promise to Proof.
+description: Guide a natural, adaptive quick/normal/deep discovery conversation, including resume and revisit.
 license: Apache-2.0
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
-# Guide a discovery episode
+Read [the discovery protocol](references/discovery-protocol.md) before acting.
+Bundled templates are optional aids, not a mandatory artifact checklist.
 
-Coordinate Idea to Promise in the current interaction. This is a human-led
-discovery workflow, not an autonomous product controller, and it stops before
-implementation.
+# Discover: the umbrella skill
 
-When working in a writable repository, keep local records under
-.itp/work/<slug>/. The final agreed source promise belongs in a normal
-project-owned path such as specs/<slug>.md.
+Start with the user's idea and current question. Do not narrate a checklist of
+stages. Default to normal; use quick for a small reversible settled need and deep
+for consequential uncertainty. Respect explicit quick/normal/deep and research
+budgets. Explain a material depth change rather than silently expanding work.
 
-## 1. Frame the need
+## Start or resume
 
-Establish actors, progress sought, current workaround, intended outcome,
-behavior/change needed, constraints, decision criteria, status-quo consequence,
-assumptions, material unknowns, and research bounds. Separate the need from the
-initially proposed solution. Save frame.md.
+For `resume <work item>`, read existing records/session and continue at the next
+unanswered question, without repeating settled interviews or choices. For
+`revisit <source>`, compare the original decision/approval with changed evidence
+and triggers. Preserve the active promise and receipt while amendments are pending.
 
-## 2. Explore opportunities, then solutions
+In quick mode one discovery.md notebook is enough. Use separate records only when
+they improve the decision or traceability. Do not require all templates. Missing
+writable storage means inline output and honest persistence limits, not a blocker
+to useful conversation. Optional setup establishes ignored local work storage.
 
-First identify distinct opportunity/need statements using stable O1, O2, ... IDs.
-Then generate materially different alternatives A1, A2, ... for the most relevant
-opportunities. Include status quo, existing/native capability, smaller/reversible
-interventions, and larger approaches where useful. Save alternatives.md.
+## Guide the reasoning
 
-## 3. Research the riskiest assumptions
+Frame the actor's progress, current workaround, outcome, constraints and important
+unknowns. Explore underlying opportunities before distinct solutions, including
+existing capability and doing nothing. Research only decision-changing claims,
+starting with the weakest important assumption. Attribute evidence and track
+counterevidence. Experiments need precommitted rules and authorized exposure.
 
-Ask what must be true for viable alternatives to succeed. Use stable C1, C2, ...
-claim IDs, explicit evidence/counterevidence, criticality, evidence strength, and
-risk lenses. Investigate high-criticality weakly supported claims first.
+Summarize real options, tradeoffs, reversibility, downside and appetite. Reuse a
+human choice already made; otherwise ask for the missing choice. Research advice
+is not a decision. A missing fact can block a build but still allow experiment,
+defer or reject. Stop on no-build without manufacturing a promise.
 
-When observation is the cheapest credible answer, use a bounded E1, E2, ...
-experiment with a precommitted decision rule and stop condition. Never invent
-results. Save research.md and experiments/.
+Challenge consequential decisions when useful. A same-context challenge is a
+self-check, not an independent review. Ground rabbit holes/premortems in current
+facts; do not generate risks merely to fill a section.
 
-Research may recommend a direction, but it must not silently become the human
-decision.
+Shape the chosen outcome from the beneficiary's future experience. Save the exact
+source before seeking human approval, calculate a real exact-byte hash, record a
+separate attributable approval and verify the handoff. General enthusiasm and
+option selection are not approval of exact text. Quick mode never bypasses this.
 
-## 4. Decide with an appetite
+## Pause or finish
 
-Present the viable choices and real tradeoffs. Distinguish evidence, uncertainty,
-preferences, appetite, and constraints.
+Leave a short status: what is settled, what is unknown, the next action and any
+needed human choice. Save session.md only when useful for resume. No timers,
+background monitoring, controller or automatic P2P execution is implied.
 
-Ask how much effort/complexity/risk the outcome is worth. Appetite is a decision
-boundary, not an estimate.
-
-If a load-bearing unknown prevents a responsible choice, return to research.
-Otherwise ask the human to choose pursue, experiment, defer, or reject. Save the
-explicit attributable choice in decision.md.
-
-## 5. Challenge when useful
-
-For consequential work, independently review evidence-to-decision traceability,
-appetite fit, and material unknowns. Then:
-- inspect likely rabbit holes that could blow the appetite,
-- run a grounded premortem: assume the decision failed and identify the few most
-  plausible reasons.
-
-Save challenge.md. Findings are advisory. Small, reversible decisions may skip
-this stage.
-
-## 6. Shape and approve
-
-Before drafting, work backwards from the beneficiary's future experience. Make
-sure the promised world is clearly better than the current workaround and that
-the promise addresses the chosen opportunity rather than merely naming a feature.
-
-For pursue/experiment, draft a revisioned source promise. Present the exact durable
-source text. Only after explicit human approval save it, compute exact-byte
-SHA-256, record approval, reread/re-hash, and record a matching handoff.
-
-Any byte change invalidates that approval. For defer/reject, stop with NO PROMISE.
-
-## 7. Stop at the boundary
-
-For an exact approved source with matching identity, give:
-/plan-acceptance <source-path>
-
-Do not invoke P2P automatically. Do not implement product code, commit, push, or
-publish external changes without separate authority.
+For an approved source propose `/plan-acceptance <source>` separately. P2P retains
+its own acceptance and delivery authority. Past delivery experience is advisory
+evidence, never an automatic requirement or proof of customer value.

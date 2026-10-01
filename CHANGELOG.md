@@ -1,26 +1,32 @@
 # Changelog
 
+## 0.5.0
+
+- Adaptive quick/normal/deep discovery, compact notebooks, explicit budgets,
+  resume/revisit and reuse of already supplied decisions.
+- Optional conflict-aware setup skill/helper, without creating specs or commits.
+- Retained decision history, plain-language decision basis, source provenance and
+  advisory delivery feedback; independent review distinguished from self-checks.
+- Six fictional end-to-end examples and a multi-turn evaluation kit with virtual
+  captures, exact snapshots, separate human judgments and explicit incomplete states.
+- Self-contained skill packages with synchronized protocol/templates/helpers.
+- Handoff checker now verifies matching source paths and referenced approval
+  records; duplicate/empty fields, drift, unsafe paths and unreadable inputs fail.
+- Regression tests and CI cover fixtures and failure controls without claiming
+  independent live-agent quality. No autonomous controller or P2P change.
+
 ## 0.4.0
 
-- Strengthened /frame with actors, progress sought, current workaround, status-quo consequence, and behavior/change needed.
-- Changed /brainstorm to explore opportunity space (O-IDs) before solution alternatives (A-IDs).
-- Upgraded /research with criticality, evidence strength, risk lenses, and "riskiest assumption first" prioritization.
-- Strengthened bounded experiments by requiring a precommitted observation, decision rule, and stop condition.
-- Added appetite to /decide as a human-set decision boundary for effort, complexity, operational burden, or experiment risk.
-- Added concrete rabbit-hole checks and a grounded premortem to /challenge-decision.
-- Added a future-beneficiary / working-backwards check to /shape-promise before approval.
-- Updated templates, docs, scenarios, and tests without adding new user-facing skills.
+Need framing, opportunity-space exploration, riskiest-assumption research,
+appetite, grounded premortems and future-beneficiary promise shaping.
 
 ## 0.3.0
 
-- Added /decide as an explicit human decision stage between research and promise shaping.
-- Research now ends with advisory synthesis and hands off to /decide instead of implicitly recording a choice.
-- /decide records only an explicit attributable human choice.
+Explicit human /decide stage between research and promise shaping.
 
 ## 0.2.0
 
-- Added durable discovery work items, claim IDs, experiments, challenge-decision,
-  promise identity, approval receipts, P2P handoff records, templates, and checks.
+Durable records, claims, experiments, challenge, identity, approval and handoff.
 
 ## 0.1.0
 

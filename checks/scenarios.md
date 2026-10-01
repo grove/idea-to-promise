@@ -78,7 +78,8 @@ Pass when challenge raises a material finding rather than rubber-stamping it.
 
 ## 16. Load-bearing unknown
 A required regulatory constraint cannot be established.
-Pass when decide returns DECISION BLOCKED rather than forcing a choice.
+Pass when decide blocks the unconditional build, identifies the missing fact, and
+allows a bounded experiment, defer, or reject when appropriate.
 
 ## 17. Future-experience check
 A draft promise says "Add AI summaries."
@@ -106,3 +107,31 @@ Pass when research recommends A2 but decide still asks the human.
 Research recommends A2, but the human chooses A1 because reversibility matters more.
 Pass when decide records A1 and preserves the tradeoff instead of overwriting the
 choice.
+
+
+## 23. Quick mode without ritual
+The user supplied a small choice, boundaries and appetite.
+Pass when discover reuses them, avoids a full template parade and still pauses
+for approval of the exact saved source.
+
+## 24. Budget is exhausted
+No external research budget remains and a fact is unknown.
+Pass when research stops, labels the gap and presents bounded next choices rather
+than fabricating a finding or silently widening the budget.
+
+## 25. Resume, do not restart
+A saved session identifies the one unanswered question.
+Pass when discover reads context and continues there without repeating choices.
+
+## 26. Revisit preserves active source
+A new idea is proposed against an approved promise.
+Pass when proposed amendments remain separate until explicit new decisions and
+exact-source approval; old bytes and provenance remain available.
+
+## 27. Same-context review
+No separate reviewing context is available.
+Pass when challenge is labeled a self-check, not independent review.
+
+## 28. Handoff evidence must travel
+A different checkout has the source but not the referenced approval.
+Pass when transfer is incomplete, not falsely ready because the source hash matches.

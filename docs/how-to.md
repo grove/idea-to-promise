@@ -1,81 +1,66 @@
-# Workflow guide
+# Use ITP in a real project
 
-## End-to-end
+## Start naturally
 
-```text
-/discover We need to make retries safe for uploads over unreliable networks.
-```
+Install the skills, open your project with a compatible agent, and say
+`/discover <idea>`. The agent should answer the current question, reuse context
+and ask only questions that could change the choice. You do not need to know the
+record format. Use individual stages when only one part needs attention.
 
-## Stage by stage
+For a small reversible change try `/discover quick <idea>`. For a consequential
+choice use `deep`, optionally adding an explicit research/tool/time budget.
+A budget being exhausted means pause and explain uncertainty, not pretend certainty.
 
-```text
-/frame <idea or notes>
-/brainstorm <framing>
-/research <questions or alternatives>
-/decide <research>
-/challenge-decision <decision record>
-/shape-promise <decision record>
-```
+## Optional setup
 
-## Frame the real need
-
-Use `/frame` to identify the actors, progress sought, current workaround,
-intended outcome, behavior/change needed, decision criteria, and important
-unknowns. Avoid turning the proposed feature into the problem statement.
-
-## Explore opportunities before solutions
-
-`/brainstorm` first creates O-IDs for distinct needs/obstacles. Only then does it
-create A-IDs for solution mechanisms. This reduces premature feature fixation.
-
-## Research the riskiest assumptions
-
-`/research` asks what must be true for the viable alternatives to work. It
-prioritizes claims that are both important and weakly evidenced. For each claim it
-records criticality, evidence strength, and a risk lens.
-
-When a bounded experiment is better than more discussion, precommit to the
-observation, decision rule, and stop condition before running it.
-
-## Decide with an appetite
-
-`/decide` presents the viable choices, separates evidence from preference, and
-asks how much the outcome is worth in effort, complexity, operational burden, or
-experiment exposure.
-
-Appetite is not an estimate. It helps reject or shrink solutions that are too
-expensive for the value of the outcome.
-
-## Challenge consequential choices
-
-`/challenge-decision` looks for evidence gaps and then asks two extra questions:
-
-1. Where could hidden complexity or dependencies blow the appetite?
-2. Assume this failed six months from now. What are the few most plausible reasons?
-
-Only material, context-grounded concerns should become findings.
-
-## Shape from the future experience
-
-`/shape-promise` asks what the beneficiary will actually be able to do,
-understand, avoid, or accomplish if the promise is true, and why that is better
-than the current workaround.
-
-If the answer only makes sense in terms of implementation details, go back rather
-than polishing the promise.
-
-## Approve and hand off
-
-Save the final source such as `specs/<slug>.md`, compute its exact identity,
-record approval, and verify the handoff:
+In a Git project `/setup-idea-to-promise` previews local storage setup. From a
+checkout you can inspect the same plan directly:
 
 ```bash
-python3 scripts/promise_identity.py specs/<slug>.md
-python3 scripts/check_work_item.py .itp/work/<slug> --promise specs/<slug>.md
+python3 scripts/setup_project.py --root /path/to/project
+python3 scripts/setup_project.py --root /path/to/project --apply
 ```
 
-Then invoke P2P separately:
+Run from the actual repository root with no concurrent filesystem edits. Setup
+preserves existing ignore-file bytes, appends the local storage exclusion when
+needed and creates `.itp/work/`. It refuses tracked discovery files, symlinks and
+path conflicts. It creates no specs, branches, commits or tracker configuration.
 
-```text
-/plan-acceptance specs/<slug>.md
-```
+## Choose, then separately approve
+
+Research might recommend A2. You may still choose A1 because reversibility matters
+more. `/decide` records your actual statement, appetite, tradeoffs and revisit
+trigger. It must not substitute its recommendation for your choice.
+
+A choice to experiment commits to learning, not a favorable outcome. Defer or
+reject ends discovery without a promise. Optional challenge examines material
+risks. A same-context challenge is a self-check, not independent review.
+
+`/shape-promise` saves a proposed source file and computes its identity before
+asking you to approve exact wording. Approving an option earlier did not approve
+this text. Approval goes into a separate receipt; never edit the source just to
+change a status heading after approval.
+
+## Resume without starting over
+
+`/discover resume .itp/work/<slug>` reads the notebook or records and optional
+session note. It reports the settled decisions, important unknown and next action.
+It should not repeat your earlier interview or silently redo research.
+
+`/discover revisit specs/<slug>.md` starts with what changed. A new dependency,
+changed user behavior, or P2P observation may warrant a different choice. Keep
+proposals separate from active records. A changed choice gets a new D-ID and
+retained history; a material promise amendment gets a new revision and approval.
+
+## Handoff
+
+Use the checker with `--handoff` and then propose `/plan-acceptance <source>`.
+For a different checkout transfer the source AND retained approval evidence;
+a path into ignored `.itp/` storage is not a portable artifact. P2P independently
+applies its acceptance-contract and authorization rules.
+
+## Worked examples and evaluation
+
+Read [the examples](../examples/README.md) for complete fictional conversations.
+Use [the evaluation kit](../evaluations/README.md) to capture actual host output
+and review process quality. Teaching examples and unit tests are not live trials.

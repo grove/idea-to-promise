@@ -1,65 +1,38 @@
-# Promise to Proof handoff
+# A narrow, portable handoff to Promise to Proof
 
-Idea to Promise and Promise to Proof are sibling workflows with a narrow,
-identity-preserving interface.
+ITP owns discovery and the human's source promise. P2P owns acceptance contracts,
+evidence planning, implementation, candidate identity, review and proof. This
+release does not change P2P or implement a controller between the repositories.
 
-## Idea to Promise owns
+## Before handoff
 
-- problem framing,
-- alternatives,
-- decision-directed research,
-- bounded experiments used for learning,
-- human decision support,
-- the final bounded source promise,
-- identity and approval of that exact source.
+Save exact proposed source bytes; calculate their identity. Obtain attributable
+human approval of that saved wording, not just the direction. Keep the receipt
+separate. Reread source, receipt and handoff, and compare paths, revision and hash:
 
-## Promise to Proof owns
-
-- acceptance requirements,
-- seams and oracles,
-- planned evidence,
-- implementation,
-- candidate identity,
-- implementation review,
-- proof and repair,
-- publication and merge-readiness rules.
-
-## Handoff artifact
-
-The primary handoff is a normal project-authored source document, commonly under
-`specs/`. It must be understandable without access to ignored ITP scratch state.
-
-The ITP handoff record names:
-
-```text
-Source: specs/<slug>.md
-Promise revision: vN
-Promise identity: promise:sha256:<hash>
-Approval: <approval record or attributable source>
-Next: /plan-acceptance specs/<slug>.md
+```bash
+python3 scripts/check_work_item.py .itp/work/<slug> \
+  --promise specs/<slug>.md --handoff
 ```
 
-Before handoff, recompute the source SHA-256 and require it to equal the approved
-identity. Drift means the approval does not cover the current source.
+Only then propose `/plan-acceptance specs/<slug>.md` separately. The ITP approval
+does not approve P2P's later contract or authorize its implementation/publication.
 
-The source promise should state observable outcome, promised behavior,
-boundaries/non-goals, binding constraints, and visible assumptions. It may include
-advisory rationale and research references.
+## Another checkout
 
-It must not contain a P2P acceptance matrix, proof verdict, implementation
-candidate identity, or a claim that implementation has already been accepted.
+The receiving context needs the exact source bytes, a retained approval receipt,
+and the actual referenced approval text or retrievable provenance. A digest alone
+cannot reconstruct the document. `.itp/` is ignored, so a Git clone does not carry
+these records by default. Transfer them explicitly or retain authorized copies in
+project-owned paths. Recompute identity after transfer; do not change approved
+source text merely to fix links. Check privacy before publishing research/receipts.
 
-## Transfer
+The source must contain the full binding outcome, scope and constraints without
+requiring the notebook. Optional research rationale is not additional scope.
 
-Invoke P2P separately:
+## Delivery feedback
 
-```text
-/plan-acceptance <source-path>
-```
-
-P2P still applies its own contract planning, evidence, and approval rules. ITP
-source approval does not authorize implementation or publication.
-
-If the source promise changes, return to the source decision, increment the
-promise revision, and obtain approval of the new exact bytes before reconciling
-downstream work.
+A P2P proof, review or retrospective may supply an observation for later research.
+Retain the relevant candidate/contract/source context and limits. Do not infer
+customer value from technical proof, or convert historical advice into a binding
+requirement. Revisit the decision and get new human agreement where scope changes.

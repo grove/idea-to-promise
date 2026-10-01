@@ -1,72 +1,61 @@
-# Discovery artifact format
+# Records in v0.5
 
-This document defines the lightweight v0.4 record shapes. Templates under
-`templates/` are the canonical starting points.
+Use the smallest durable record that preserves the decision. Quick discovery may
+use `.itp/work/<slug>/discovery.md` with Need, Options, Evidence and unknowns,
+Decision, Next. A pending choice stays pending. Normal/deep work may use frame.md,
+alternatives.md, research.md, experiments/, decision.md and challenge.md.
+`session.md` is optional resume context, not executable workflow state.
 
-## Local work root
+Canonical [templates](../templates/discovery.md) are aids, not mandatory forms.
+Every installed skill carries the relevant copies and the same protocol.
 
-Use `.itp/work/<slug>/` for active discovery state.
+## Identities and history
 
-Core records:
+O/A/C/E IDs identify opportunities, alternatives, claims and experiments. Preserve
+an ID while refining the same thing. Decision D-IDs survive clarifications, but a
+materially changed human choice gets the next D-ID, a Supersedes reference, and
+retained prior bytes such as `history/decision-D1.md`. Active decision status is
+active/superseded/abandoned. Pending alternatives to it go in decision-proposed.md.
+Do not delete or silently rewrite prior rationale or approved sources.
 
-- `frame.md` — actors, progress sought, current workaround, outcome, behavior change, constraints, unknowns.
-- `alternatives.md` — opportunity space (O-IDs) followed by solution alternatives (A-IDs).
-- `research.md` — decision questions, risk-prioritized claim ledger, and advisory synthesis.
-- `experiments/<name>.md` — bounded learning activities and actual results.
-- `decision.md` — explicit attributable human choice, appetite, tradeoffs, consequences, revisit triggers.
-- `challenge.md` — advisory evidence review, rabbit holes, and premortem.
-- `promise-draft.md` — proposed source promise before durable publication.
-- `approval.md` — exact promise revision/hash and attributable approval.
-- `handoff.md` — exact source identity handed to Promise to Proof.
+The decision basis describes evidence, major unknowns, reversibility and downside.
+Appetite is a human-set boundary, not a delivery estimate. Source provenance
+records observation versus interpretation, version/time when relevant and limits.
+Retained P2P observations are advisory evidence only.
 
-## Opportunity and alternative IDs
+## Promise and receipts
 
-Opportunities use stable O1, O2, ... IDs. They describe needs/obstacles, never
-solutions. Alternatives use stable A1, A2, ... IDs and state which opportunities
-they address.
+Source promises remain ordinary project-authored UTF-8 Markdown, usually
+`specs/<slug>.md`, with `Promise revision: vN` and nonempty sections Intended
+outcome, Promise, Boundaries, Binding constraints, Out of scope, Assumptions and
+open questions, Advisory rationale. `None` may be a deliberate section value.
 
-## Claim ledger
+Save and inspect bytes before approval. SHA-256 uses those exact bytes, not a
+newline-normalized representation. Do not store the hash inside the hashed file.
+A DRAFT status may remain in an approved source; the separate receipt binds exact
+bytes. Any byte change needs renewed approval, and material changes increment vN.
 
-Claims use stable C-IDs and record kind, risk lens, criticality, evidence
-strength, claim, support, evidence, counterevidence, decision impact, and next
-check/stopping reason.
+Approval fields: Source, Promise revision, Promise identity, Approved by,
+Approval source. Handoff fields: Source, Promise revision, Promise identity,
+Approval. The last field names the retrievable separate approval record.
+References are plain project-root-relative paths, not URLs, absolute paths or
+Markdown links. Approval source is attributed text/context and may cite a URL;
+the checker does not fetch or authenticate it. Duplicate or empty metadata is
+invalid. Fenced examples are not metadata.
 
-High-criticality weakly evidenced claims should normally be investigated before
-low-impact uncertainty.
+## Checker modes and compatibility
 
-## Decision record
+The default checker inspects present claims/experiments and a supplied promise.
+It does not require every discovery artifact or imply approval. Existing approval
+or handoff records require `--promise` so identity checks cannot be silently skipped.
+`--handoff` additionally requires handoff.md and its referenced approval. Both
+records must match actual source path, revision and digest. Escaping references,
+unreadable files, mismatches, duplicate metadata and incomplete receipts fail.
 
-The decision record is created only after an explicit human choice. It records an
-appetite: how much effort, complexity, operational burden, or experiment exposure
-the outcome is worth. Appetite constrains choice; it is not a delivery estimate.
+v0.4 core promise sections and identity format are unchanged. Old drafts are not
+rewritten. Old receipts missing attribution or handoff Approval references now
+need explicit reconciliation. Never fill these fields by inventing a human
+approval. Legacy table claim IDs are still inspected alongside compact C-ID lines.
 
-The record distinguishes evidence-supported conclusions from preferences and
-remaining unknowns, preserves alternatives not selected, records consequences,
-and names revisit triggers.
-
-## Challenge record
-
-The challenge records material findings, concrete rabbit holes that may threaten
-the outcome/appetite, and a grounded premortem. It is advisory and does not rewrite
-the decision.
-
-## Durable promise
-
-The durable promise remains a normal project-owned Markdown file such as
-`specs/<slug>.md`. It contains the binding source agreement and enough context
-to understand it without ignored discovery files.
-
-Required headings remain: Intended outcome, Promise, Boundaries, Binding
-constraints, Out of scope, Assumptions and open questions, Advisory rationale.
-
-Before approval, shape-promise should be able to explain the beneficiary's future
-experience and why it is meaningfully better than the current workaround.
-
-## Hashing and amendments
-
-Promise identity remains `promise:sha256:<64 lowercase hex>`, computed over exact
-file bytes. Approval and handoff repeat source, revision, identity, and approval
-reference. Any byte change invalidates the old approval.
-
-Material promise changes require a new revision and renewed approval. Research or
-challenge updates alone do not revise the promise unless binding content changes.
+These checks establish structural consistency only, not source credibility,
+approver authenticity, complete Markdown semantics or implementation readiness.
