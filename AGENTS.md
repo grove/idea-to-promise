@@ -1,9 +1,29 @@
 # Working on Idea to Promise
 
-Read README.md and docs/discovery-protocol.md before changing workflow semantics.
+Read README.md, docs/discovery-protocol.md, and docs/artifact-format.md before
+changing workflow semantics.
 
-This repository ships agent skills, not a product-delivery controller. Preserve the distinction between recommendation, human choice, exact source approval, P2P acceptance planning, and authority to implement or publish.
+This repository ships agent skills and lightweight structural tools, not a
+product-delivery controller.
 
-Keep the boundary with Promise to Proof crisp: ITP decides what is worth promising; P2P plans acceptance, implements, reviews, and proves that promise.
+Preserve these distinctions:
+- observation vs attributed report vs inference vs assumption vs preference;
+- recommendation vs human decision;
+- decision vs exact source-promise approval;
+- ITP source approval vs P2P acceptance approval;
+- source approval vs authority to implement, commit, push, publish, or merge.
 
-Prefer small explicit changes. Never portray structural checks or examples as evidence that live agent judgment is correct.
+Keep the boundary with Promise to Proof crisp: ITP decides what is worth
+promising; P2P plans acceptance, implements, reviews, and proves that promise.
+
+Keep .itp/ and .p2p/ ignored. Do not commit private research, credentials, or
+model transcripts by default.
+
+Run:
+
+```bash
+python3 -m unittest discover -s checks -p 'test_*.py' -v
+```
+
+Structural checks are not evidence that live agent judgment is correct. Update
+checks/scenarios.md when changing decision behavior.

@@ -2,13 +2,13 @@
 
 ## End-to-end
 
-For a guided discovery episode:
-
 ```text
 /discover We need to make retries safe for uploads over unreliable networks.
 ```
 
-The workflow should frame the need, explore materially different approaches, investigate the uncertainties that could change the choice, and shape a bounded source promise for human approval.
+For a named work item, discovery records normally live under
+`.itp/work/<slug>/`. The durable agreed source promise normally lives under
+`specs/<slug>.md`.
 
 ## Stage by stage
 
@@ -16,27 +16,57 @@ The workflow should frame the need, explore materially different approaches, inv
 /frame <idea or notes>
 /brainstorm <framing>
 /research <questions or alternatives>
+/challenge-decision <decision record>
 /shape-promise <selected direction and evidence>
 ```
 
-You can start at any stage when earlier work already exists. New evidence may send you back to brainstorming. There is no requirement that every idea become a build.
+Start at any stage when earlier work already exists. New evidence may return the
+work to alternatives or research. There is no requirement that every idea become
+a build.
 
-## Research
+## Research and experiments
 
-Prefer primary sources and direct observations. Keep an attributed claim ledger and record contradictory evidence. Stop when another reasonable check is unlikely to change the decision or when the agreed research bounds are reached.
+Order research questions by decision impact. Keep stable claim IDs and record
+counterevidence. When observation is cheaper than more argument, create a bounded
+experiment under `.itp/work/<slug>/experiments/`.
 
-## Agree the promise
+Stop when another reasonable check is unlikely to change the decision or when an
+agreed research bound is reached.
 
-Review the exact proposed source text. Ensure the intended outcome, promised behavior, boundaries, and constraints are explicit. Keep advisory rationale separate from binding commitments.
+## Challenge the decision
 
-Approve the exact version you intend to hand off. If the text changes materially, seek renewed agreement.
+For consequential work, run `/challenge-decision` before shaping the promise.
+The challenge is independent and advisory: it checks evidence-to-decision
+traceability, ignored counterevidence, prematurely dismissed alternatives, and
+load-bearing unknowns. It does not rewrite the decision.
+
+## Shape and approve the promise
+
+Use `/shape-promise` to create `.itp/work/<slug>/promise-draft.md`. After the
+human selects the exact wording, save the durable source, for example
+`specs/<slug>.md`.
+
+Compute its identity:
+
+```bash
+python3 scripts/promise_identity.py specs/<slug>.md
+```
+
+Record that exact identity and attributable approval in
+`.itp/work/<slug>/approval.md`. Any byte change invalidates that approval.
+
+Validate a work item:
+
+```bash
+python3 scripts/check_work_item.py .itp/work/<slug> --promise specs/<slug>.md
+```
 
 ## Hand off to Promise to Proof
 
-After agreement:
+After the approval hash matches the current source:
 
 ```text
 /plan-acceptance specs/<slug>.md
 ```
 
-Promise to Proof then owns acceptance planning, implementation, review, and proof.
+Promise to Proof owns acceptance planning, implementation, review, and proof.

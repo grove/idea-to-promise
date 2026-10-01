@@ -1,15 +1,17 @@
 # Promise to Proof handoff
 
-Idea to Promise and Promise to Proof are sibling workflows with a narrow interface.
+Idea to Promise and Promise to Proof are sibling workflows with a narrow,
+identity-preserving interface.
 
 ## Idea to Promise owns
 
 - problem framing,
 - alternatives,
 - decision-directed research,
-- claim/evidence synthesis,
+- bounded experiments used for learning,
 - human decision support,
-- the final bounded source promise.
+- the final bounded source promise,
+- identity and approval of that exact source.
 
 ## Promise to Proof owns
 
@@ -20,30 +22,44 @@ Idea to Promise and Promise to Proof are sibling workflows with a narrow interfa
 - candidate identity,
 - implementation review,
 - proof and repair,
-- publication/merge-readiness rules.
+- publication and merge-readiness rules.
 
 ## Handoff artifact
 
-The handoff is a normal project-authored source document, commonly under `specs/`.
+The primary handoff is a normal project-authored source document, commonly under
+`specs/`. It must be understandable without access to ignored ITP scratch state.
 
-It should state:
-- intended observable outcome,
-- promised behavior,
-- boundaries and non-goals,
-- binding constraints,
-- important assumptions/open questions,
-- advisory research/rationale where useful,
-- revision identity,
-- actual approval reference when available.
+The ITP handoff record names:
 
-It should **not** contain a P2P acceptance matrix or claim that implementation has been proved.
+```text
+Source: specs/<slug>.md
+Promise revision: vN
+Promise identity: promise:sha256:<hash>
+Approval: <approval record or attributable source>
+Next: /plan-acceptance specs/<slug>.md
+```
+
+Before handoff, recompute the source SHA-256 and require it to equal the approved
+identity. Drift means the approval does not cover the current source.
+
+The source promise should state observable outcome, promised behavior,
+boundaries/non-goals, binding constraints, and visible assumptions. It may include
+advisory rationale and research references.
+
+It must not contain a P2P acceptance matrix, proof verdict, implementation
+candidate identity, or a claim that implementation has already been accepted.
 
 ## Transfer
 
-Once the exact source text is agreed:
+Invoke P2P separately:
 
 ```text
 /plan-acceptance <source-path>
 ```
 
-P2P must still apply its own contract planning and approval rules. If the source promise changes, return to the source decision and obtain renewed agreement before reconciling downstream work.
+P2P still applies its own contract planning, evidence, and approval rules. ITP
+source approval does not authorize implementation or publication.
+
+If the source promise changes, return to the source decision, increment the
+promise revision, and obtain approval of the new exact bytes before reconciling
+downstream work.

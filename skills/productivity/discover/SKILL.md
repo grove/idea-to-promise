@@ -1,32 +1,68 @@
 ---
 name: discover
-description: Guide an idea through framing, alternatives, decision-directed research, and a bounded source promise. Use for an end-to-end human-led discovery episode; stop at approval or an explicit no-build decision.
+description: Guide an idea through durable framing, alternatives, decision-directed research, bounded experiments, decision challenge, and exact source-promise approval before a separate Promise to Proof handoff.
 license: Apache-2.0
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Guide a discovery episode
 
-Coordinate Idea to Promise in the current interaction. This is a human-led discovery workflow, not an autonomous controller, and it does not start implementation.
+Coordinate Idea to Promise in the current interaction. This is a human-led
+discovery workflow, not an autonomous product controller, and it stops before
+implementation.
+
+When working in a writable repository, keep local records under
+.itp/work/<slug>/. The final agreed source promise belongs in a normal
+project-owned path such as specs/<slug>.md.
 
 ## 1. Frame
-Establish the problem or opportunity, audience, desired observable outcome, constraints, decision criteria, assumptions, and material unknowns. Separate the need from the initially suggested solution.
+
+Establish problem/opportunity, audience, observable intended outcome, constraints,
+decision criteria, assumptions, material unknowns, and research bounds. Separate
+the need from the initially proposed solution. Save frame.md.
 
 ## 2. Explore
-Generate genuinely different alternatives. Include the status quo, existing/native capability, a smaller intervention, and larger approaches where useful. Explain mechanisms, tradeoffs, assumptions, reversibility, and the cheapest useful checks.
+
+Generate materially different alternatives. Include status quo, existing/native
+capability, smaller/reversible intervention, and larger approaches where useful.
+Use stable A1, A2, ... IDs. Save alternatives.md.
 
 ## 3. Research
-Investigate only questions likely to change the decision. Use actual available sources. Maintain a claim ledger, seek counterevidence, preserve contradictions, and stop when more checking is unlikely to alter the choice or the agreed bounds are reached.
 
-## 4. Decide and shape
-Synthesize pursue/experiment/defer/reject. Ask the human for essential choices rather than inventing them. For pursue/experiment, draft a bounded source promise that separates binding outcomes/boundaries/constraints from advisory rationale and research.
+Investigate only questions likely to change the decision. Use actual available
+sources, stable C1, C2, ... claim IDs, explicit evidence/counterevidence, and a
+stopping rule. Save research.md.
 
-## 5. Preserve and stop
-Present the exact source for approval. Only report **AGREED** when a real attributable human approval covers that exact text. For an agreed promise, propose the separate next command:
+When observation is the cheapest credible answer, use a bounded E1, E2, ...
+experiment within actual authority and save it under experiments/. Never invent
+results.
 
-```text
+## 4. Decide
+
+Synthesize pursue, experiment, defer, or reject. Ask the human for load-bearing
+choices rather than making them silently. Save decision.md with the attributable
+human selection and revisit triggers.
+
+For consequential work, independently challenge evidence-to-decision traceability,
+ignored counterevidence, unsupported alternative rejection, constraints, and
+load-bearing unknowns. Save challenge.md. Findings are advisory.
+
+## 5. Shape and approve
+
+For pursue/experiment, draft a revisioned source promise separating binding
+outcome/boundaries/constraints from advisory rationale. Save promise-draft.md.
+
+Present the exact durable source text. Only after explicit human approval: save
+the durable source, compute exact-byte SHA-256, record approval in approval.md,
+reread/re-hash, and record a matching handoff.md.
+
+Any byte change invalidates that approval. For defer/reject, stop with NO PROMISE.
+
+## 6. Stop at the boundary
+
+For an exact approved source with matching identity, give:
 /plan-acceptance <source-path>
-```
 
-Do not invoke Promise to Proof automatically. Do not implement, commit product code, or publish external changes without separate authority.
+Do not invoke P2P automatically. Do not implement product code, commit, push, or
+publish external changes without separate authority.
