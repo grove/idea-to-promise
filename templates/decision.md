@@ -6,6 +6,9 @@ Direction: pursue | experiment | defer | reject
 ## Selected direction
 <the explicit human choice>
 
+## Appetite
+<how much effort, complexity, operational burden, or experiment exposure this outcome is worth; "not material" when appropriate>
+
 ## Evidence-supported conclusions
 - C1 — <conclusion>
 
@@ -21,6 +24,9 @@ Direction: pursue | experiment | defer | reject
 ## Human decision
 Selected by: <person or attributable source>
 Decision context: <conversation, issue, meeting, etc.>
+
+## Consequences
+- <important consequence accepted with this choice>
 
 ## Revisit triggers
 - <condition that should reopen the decision>

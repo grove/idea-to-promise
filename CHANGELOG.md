@@ -1,25 +1,27 @@
 # Changelog
 
+## 0.4.0
+
+- Strengthened /frame with actors, progress sought, current workaround, status-quo consequence, and behavior/change needed.
+- Changed /brainstorm to explore opportunity space (O-IDs) before solution alternatives (A-IDs).
+- Upgraded /research with criticality, evidence strength, risk lenses, and "riskiest assumption first" prioritization.
+- Strengthened bounded experiments by requiring a precommitted observation, decision rule, and stop condition.
+- Added appetite to /decide as a human-set decision boundary for effort, complexity, operational burden, or experiment risk.
+- Added concrete rabbit-hole checks and a grounded premortem to /challenge-decision.
+- Added a future-beneficiary / working-backwards check to /shape-promise before approval.
+- Updated templates, docs, scenarios, and tests without adding new user-facing skills.
+
 ## 0.3.0
 
 - Added /decide as an explicit human decision stage between research and promise shaping.
 - Research now ends with advisory synthesis and hands off to /decide instead of implicitly recording a choice.
-- /decide reduces the work to viable options, explains tradeoffs, separates evidence from preference, and records only an explicit attributable human choice.
-- Added decision-blocking behavior for unresolved load-bearing unknowns.
-- Updated /discover, protocol docs, templates, scenarios, and tests for the seven-skill workflow.
+- /decide records only an explicit attributable human choice.
 
 ## 0.2.0
 
-- Added a durable local discovery work-item model under .itp/work/<slug>/.
-- Added stable claim IDs, evidence/counterevidence, and explicit research stop rules.
-- Added bounded experiment records and research-to-experiment feedback.
-- Added /challenge-decision as an independent advisory pre-promise review.
-- Added revisioned promise identity using exact-byte SHA-256.
-- Added approval and drift-detectable Promise to Proof handoff records.
-- Added canonical record templates, structural validation tools, scenarios, tests,
-  and GitHub Actions checks.
+- Added durable discovery work items, claim IDs, experiments, challenge-decision,
+  promise identity, approval receipts, P2P handoff records, templates, and checks.
 
 ## 0.1.0
 
-Initial skills-first release with framing, brainstorming, research, promise
-shaping, discovery coordination, and basic Promise to Proof handoff documentation.
+Initial skills-first release.

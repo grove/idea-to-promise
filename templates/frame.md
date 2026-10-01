@@ -3,17 +3,29 @@
 ## Problem or opportunity
 <what is happening now and why it matters>
 
-## Audience
-<who experiences the problem or benefits>
+## Actors
+- <who experiences the problem or whose behavior must change>
+
+## Progress sought
+<what the actor is trying to accomplish>
+
+## Current workaround
+<what happens today instead, including doing nothing>
 
 ## Intended outcome
 <observable change, without choosing an implementation>
 
+## Behavior/change needed
+<what must become easier, possible, safer, faster, clearer, or different>
+
 ## Context and constraints
-- <binding or likely constraint>
+- <supported technical, legal, operational, commercial, or policy constraint>
 
 ## Decision criteria
 - <criterion that will distinguish alternatives>
+
+## Status-quo consequence
+<what happens if nothing changes>
 
 ## Assumptions
 - <assumption>

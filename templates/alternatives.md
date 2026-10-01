@@ -1,9 +1,30 @@
-# Alternatives: <work item>
+# Opportunities and alternatives: <work item>
 
-## Decision
-<what choice these alternatives inform>
+## Intended outcome
+<outcome being explored>
 
-## A1 — Do nothing / keep current behavior
+## Opportunity space
+
+### O1 — <need or obstacle>
+Actor:
+Situation:
+Unmet need / obstacle:
+Why it matters:
+Evidence or assumption status:
+Act-if threshold:
+
+### O2 — <need or obstacle>
+Actor:
+Situation:
+Unmet need / obstacle:
+Why it matters:
+Evidence or assumption status:
+Act-if threshold:
+
+## Solution space
+
+### A1 — Do nothing / current behavior
+Addresses: <O-IDs>
 Mechanism:
 Tradeoffs:
 Prerequisites:
@@ -11,7 +32,8 @@ Reversibility:
 Decision-critical assumptions:
 Cheapest useful check:
 
-## A2 — Existing or smaller intervention
+### A2 — Existing or smaller intervention
+Addresses: <O-IDs>
 Mechanism:
 Tradeoffs:
 Prerequisites:
@@ -19,7 +41,8 @@ Reversibility:
 Decision-critical assumptions:
 Cheapest useful check:
 
-## A3 — Alternative approach
+### A3 — Alternative approach
+Addresses: <O-IDs>
 Mechanism:
 Tradeoffs:
 Prerequisites:
@@ -28,4 +51,4 @@ Decision-critical assumptions:
 Cheapest useful check:
 
 ## Research questions
-- <question likely to change the choice>
+1. <question most likely to change the choice>

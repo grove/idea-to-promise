@@ -1,9 +1,9 @@
 ---
 name: discover
-description: Guide an idea through durable framing, alternatives, decision-directed research, explicit human decision, optional decision challenge, and exact source-promise approval before a separate Promise to Proof handoff.
+description: Guide an idea through need framing, opportunity exploration, risk-prioritized research, explicit human decision with appetite, optional premortem challenge, and exact source-promise approval before Promise to Proof.
 license: Apache-2.0
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Guide a discovery episode
@@ -16,68 +16,71 @@ When working in a writable repository, keep local records under
 .itp/work/<slug>/. The final agreed source promise belongs in a normal
 project-owned path such as specs/<slug>.md.
 
-## 1. Frame
+## 1. Frame the need
 
-Establish problem/opportunity, audience, observable intended outcome, constraints,
-decision criteria, assumptions, material unknowns, and research bounds. Separate
-the need from the initially proposed solution. Save frame.md.
+Establish actors, progress sought, current workaround, intended outcome,
+behavior/change needed, constraints, decision criteria, status-quo consequence,
+assumptions, material unknowns, and research bounds. Separate the need from the
+initially proposed solution. Save frame.md.
 
-## 2. Explore
+## 2. Explore opportunities, then solutions
 
-Generate materially different alternatives. Include status quo, existing/native
-capability, smaller/reversible intervention, and larger approaches where useful.
-Use stable A1, A2, ... IDs. Save alternatives.md.
+First identify distinct opportunity/need statements using stable O1, O2, ... IDs.
+Then generate materially different alternatives A1, A2, ... for the most relevant
+opportunities. Include status quo, existing/native capability, smaller/reversible
+interventions, and larger approaches where useful. Save alternatives.md.
 
-## 3. Research
+## 3. Research the riskiest assumptions
 
-Investigate only questions likely to change the decision. Use actual available
-sources, stable C1, C2, ... claim IDs, explicit evidence/counterevidence, and a
-stopping rule. Save research.md.
+Ask what must be true for viable alternatives to succeed. Use stable C1, C2, ...
+claim IDs, explicit evidence/counterevidence, criticality, evidence strength, and
+risk lenses. Investigate high-criticality weakly supported claims first.
 
 When observation is the cheapest credible answer, use a bounded E1, E2, ...
-experiment within actual authority and save it under experiments/. Never invent
-results.
+experiment with a precommitted decision rule and stop condition. Never invent
+results. Save research.md and experiments/.
 
-Research may recommend a direction, but it must not silently turn that
-recommendation into the human decision.
+Research may recommend a direction, but it must not silently become the human
+decision.
 
-## 4. Decide
+## 4. Decide with an appetite
 
-Present the viable choices and real tradeoffs in plain language. Distinguish
-evidence, uncertainty, preferences, and constraints.
+Present the viable choices and real tradeoffs. Distinguish evidence, uncertainty,
+preferences, appetite, and constraints.
 
-If a load-bearing unknown prevents a responsible choice, return to research or a
-bounded experiment.
+Ask how much effort/complexity/risk the outcome is worth. Appetite is a decision
+boundary, not an estimate.
 
-Otherwise ask the human to choose pursue, experiment, defer, or reject. Only
-after an explicit human choice save decision.md with the attributable selection,
-evidence-supported conclusions, preferences/tradeoffs, alternatives not selected,
-and revisit triggers.
+If a load-bearing unknown prevents a responsible choice, return to research.
+Otherwise ask the human to choose pursue, experiment, defer, or reject. Save the
+explicit attributable choice in decision.md.
 
 ## 5. Challenge when useful
 
-For consequential work, independently challenge evidence-to-decision traceability,
-ignored counterevidence, unsupported alternative rejection, constraints, and
-load-bearing unknowns. Save challenge.md. Findings are advisory and do not replace
-the human decision.
+For consequential work, independently review evidence-to-decision traceability,
+appetite fit, and material unknowns. Then:
+- inspect likely rabbit holes that could blow the appetite,
+- run a grounded premortem: assume the decision failed and identify the few most
+  plausible reasons.
 
-Small, reversible decisions may proceed without this optional challenge.
+Save challenge.md. Findings are advisory. Small, reversible decisions may skip
+this stage.
 
 ## 6. Shape and approve
 
-For pursue/experiment, draft a revisioned source promise separating binding
-outcome/boundaries/constraints from advisory rationale. Save promise-draft.md.
+Before drafting, work backwards from the beneficiary's future experience. Make
+sure the promised world is clearly better than the current workaround and that
+the promise addresses the chosen opportunity rather than merely naming a feature.
 
-Present the exact durable source text. Only after explicit human approval: save
-the durable source, compute exact-byte SHA-256, record approval in approval.md,
-reread/re-hash, and record a matching handoff.md.
+For pursue/experiment, draft a revisioned source promise. Present the exact durable
+source text. Only after explicit human approval save it, compute exact-byte
+SHA-256, record approval, reread/re-hash, and record a matching handoff.
 
 Any byte change invalidates that approval. For defer/reject, stop with NO PROMISE.
 
 ## 7. Stop at the boundary
 
 For an exact approved source with matching identity, give:
-
 /plan-acceptance <source-path>
 
 Do not invoke P2P automatically. Do not implement product code, commit, push, or

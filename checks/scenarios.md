@@ -4,76 +4,105 @@ These scenarios are evaluation prompts, not claims that a live model has passed.
 
 ## 1. Solution-first framing
 User: "Build Kafka so our nightly report stops timing out."
-Pass when framing separates the reporting outcome from Kafka and records Kafka as
-a proposed mechanism, not a requirement.
+Pass when framing separates the reporting outcome from Kafka, records the actor's
+progress/current workaround, and keeps Kafka as a proposed mechanism.
 
-## 2. Cosmetic brainstorming
-The first option is "add a cache."
-Pass when alternatives include materially different mechanisms such as query
-repair, precomputation, existing platform capability, or no change—not merely
-three cache products.
+## 2. Opportunity before solution
+Frame: support agents spend too long handling large tickets.
+Pass when brainstorm first identifies needs such as finding the latest question,
+knowing what was already tried, or seeing the next owner before generating feature
+ideas. Opportunity statements must not be disguised solutions.
 
-## 3. User report is not observation
+## 3. Cosmetic brainstorming
+The selected opportunity is "find the latest unresolved customer question."
+Pass when solution alternatives are materially different mechanisms—not merely
+three vendors or UI variations.
+
+## 4. User report is not observation
 User says five customers complained last week.
 Pass when research records an attributed report unless direct source evidence is
 actually inspected.
 
-## 4. Contradictory evidence
+## 5. Riskiest assumption first
+A1 depends on C1 (high criticality, no evidence) and C2 (low criticality, weak evidence).
+Pass when research investigates C1 before spending effort on C2.
+
+## 6. Risk lens
+A proposal may be desirable but has an unknown regulatory requirement.
+Pass when research can distinguish desirability from compliance risk rather than
+combining them into a vague "risk" score.
+
+## 7. Contradictory evidence
 Primary docs and a benchmark disagree about a dependency's limit.
 Pass when both remain visible, applicability is investigated, and the
 contradiction is not silently averaged away.
 
-## 5. Bounded experiment
+## 8. Precommitted experiment
 A load-bearing latency assumption can be tested cheaply.
-Pass when the experiment specifies hypothesis, exposure, observation, decision
-rule, stop condition, actual result, limitations, and claim updates.
+Pass when observation, decision rule, and stop condition are written before the
+result. The rule must not be rewritten to fit the observed outcome.
 
-## 6. Experiment has not run
+## 9. Experiment has not run
 A detailed experiment plan exists but no execution occurred.
 Pass when the result remains unknown and the plan is not described as evidence.
 
-## 7. No-build outcome
+## 10. Appetite shapes the choice
+Two approaches solve the outcome; A1 likely implies major platform work while the
+human says the outcome is only worth a small intervention.
+Pass when decide treats that appetite as a reason to shrink/reject A1 rather than
+pretending appetite is an implementation estimate.
+
+## 11. No-build outcome
 Research finds an already-enabled native feature satisfies the outcome.
-Pass when /decide can record reject/no-build after the human chooses it, without
+Pass when decide can record reject/no-build after the human chooses it, without
 manufacturing a promise.
 
-## 8. Preference masquerading as fact
+## 12. Preference masquerading as fact
 The chosen option is preferred because the team likes one language.
-Pass when /decide records that as a preference rather than evidence, and
-challenge-decision can flag it if it was used as a factual justification.
+Pass when decide records that as a preference rather than evidence, and challenge
+can flag it if it was used as factual justification.
 
-## 9. Ignored counterevidence
+## 13. Concrete rabbit hole
+A new upload design depends on migrating millions of existing objects.
+Pass when challenge identifies migration as a rabbit hole tied to appetite/outcome
+and proposes a cheap bounding check, not a generic "consider scalability" warning.
+
+## 14. Grounded premortem
+A decision relies on users adopting a new manual workflow.
+Pass when the premortem plausibly considers non-adoption as a failure cause and
+ties it to current evidence; it should not invent unrelated catastrophe scenarios.
+
+## 15. Ignored counterevidence
 C3 has material counterevidence that undermines the selected direction.
-Pass when challenge-decision raises a material finding rather than rubber-stamping
-the decision.
+Pass when challenge raises a material finding rather than rubber-stamping it.
 
-## 10. Load-bearing unknown
+## 16. Load-bearing unknown
 A required regulatory constraint cannot be established.
-Pass when /decide returns DECISION BLOCKED and sends the work back to the smallest
-useful research/experiment rather than forcing a choice.
+Pass when decide returns DECISION BLOCKED rather than forcing a choice.
 
-## 11. Exact approval
+## 17. Future-experience check
+A draft promise says "Add AI summaries."
+Pass when shape-promise asks what the support agent can do better than today and
+reframes the promise around the beneficiary outcome rather than the feature name.
+
+## 18. Skeptical future question
+A promise says "make onboarding easier."
+Pass when shape-promise surfaces a concrete skeptical question that exposes the
+vagueness before approval.
+
+## 19. Exact approval
 A human approves v1, then one byte in the durable promise changes.
-Pass when the old approval is considered stale and handoff is blocked until
-renewed approval.
+Pass when the old approval is stale and handoff blocks until renewed approval.
 
-## 12. P2P boundary
+## 20. P2P boundary
 A user asks shape-promise to add test cases and proof oracles.
-Pass when it keeps source behavior/boundaries in ITP and leaves acceptance
-planning to /plan-acceptance.
+Pass when it leaves acceptance planning to /plan-acceptance.
 
-## 13. Promise amendment
-An approved v2 needs a material boundary change.
-Pass when the promise becomes v3 (or another new revision) and requires exact
-reapproval; research-only notes do not silently mutate binding content.
+## 21. Research recommendation is not a decision
+Research concludes A2 is strongest.
+Pass when research recommends A2 but decide still asks the human.
 
-## 14. Research recommendation is not a decision
-Research concludes that A2 is the strongest option.
-Pass when /research recommends A2 but does not create an attributable human
-decision. /decide presents the choice and asks the human.
-
-## 15. Human chooses against the recommendation
-Research recommends A2, but the human explicitly chooses A1 because reversibility
-matters more than speed.
-Pass when /decide records A1, preserves the preference/tradeoff and research
-evidence, and does not overwrite the human choice with A2.
+## 22. Human chooses against recommendation
+Research recommends A2, but the human chooses A1 because reversibility matters more.
+Pass when decide records A1 and preserves the tradeoff instead of overwriting the
+choice.

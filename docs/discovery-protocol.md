@@ -10,203 +10,185 @@ ITP answers **what should we promise, and why?** Promise to Proof (P2P) answers
 can we prove it?**
 
 ```text
-idea → frame → alternatives → research ↔ experiment → decide → decision
-                                                             ↓
-                                                        challenge?
-                                                             ↓
-                                                       source promise
-                                                             ↓
-                                                      Promise to Proof
+need/job
+  ↓
+opportunity space
+  ↓
+solution alternatives
+  ↓
+riskiest assumptions
+  ↓
+research ↔ bounded experiment
+  ↓
+human decision + appetite
+  ↓
+optional challenge: rabbit holes + premortem
+  ↓
+future-experience check
+  ↓
+exact source promise
+  ↓
+Promise to Proof
 ```
 
 ITP must not create P2P acceptance matrices, select proof oracles, invent
 candidate identities, declare implementation acceptance, or treat source approval
 as delivery authority.
 
-## Work item
+## Frame the real need
 
-Active discovery records live under:
+A frame separates the proposed solution from the underlying need. It records:
 
-```text
-.itp/work/<slug>/
-├── frame.md
-├── alternatives.md
-├── research.md
-├── experiments/
-│   └── <experiment>.md
-├── decision.md
-├── challenge.md
-├── promise-draft.md
-├── approval.md
-└── handoff.md
-```
+- actors,
+- progress sought,
+- current workaround,
+- intended observable outcome,
+- behavior/change needed,
+- status-quo consequence,
+- constraints,
+- decision criteria,
+- assumptions and material unknowns,
+- research bounds.
 
-Not every record is required. The path is a local working convention and is
-normally ignored by Git. It may contain sensitive or provisional material.
+The purpose is to avoid feature-first framing. A proposed feature may be useful
+context but is not automatically the requirement.
 
-The durable product output is a normal project-owned source document, commonly:
+## Opportunity before solution
 
-```text
-specs/<slug>.md
-```
+Brainstorming first explores the opportunity space using stable O1, O2, ... IDs.
+An opportunity describes an unmet need, obstacle, or desired progress for an
+actor. It must not secretly encode a solution.
 
-A final promise must stand on its own. It must not require a future reader to
-recover ignored `.itp/` files or a previous conversation merely to understand
-the binding outcome, boundaries, and constraints.
+Only then does the workflow create solution alternatives A1, A2, ... and record
+which O-IDs each addresses.
 
-## Stable identities
+This separation helps reveal when several apparently different features are
+actually attempts to solve the same underlying need, or when one broad problem
+contains several distinct opportunities.
 
-Within a work item use stable IDs for material research claims: `C1`, `C2`, …
-Do not renumber an existing claim just because its support changes. Allocate a
-new ID for a materially different claim.
+## Risk-prioritized research
 
-Experiments may use `E1`, `E2`, … and decisions `D1`, `D2`, … when multiple
-records need to be referenced.
+Research asks: **what must be true for this alternative to work?**
 
-A promise carries a human-readable revision such as `v1`, `v2`, … . Material
-changes to promised behavior, boundaries, binding constraints, or experiment
-decision rules require a new revision and renewed approval.
+Each material claim C1, C2, ... records:
+- kind,
+- risk lens,
+- criticality,
+- evidence strength,
+- support,
+- evidence,
+- counterevidence,
+- decision impact,
+- next check or stopping reason.
 
-The immutable identity of an approval is the SHA-256 of the exact UTF-8 bytes of
-the durable promise file. The hash is stored in `approval.md` or another durable
-approval record, not inside the hashed promise itself.
+Risk lenses may include desirability, feasibility, viability, adaptability,
+compliance, or another clearly named domain risk.
 
-## Evidence discipline
+Criticality describes how much the decision depends on the claim. Evidence
+strength describes how well the claim is currently supported.
 
-Research is decision-directed. First state the decision being informed and order
-questions by how likely their answers are to change that decision.
+Research normally attacks high-criticality claims with weak or no evidence first.
+It should not spend equal effort on every uncertainty.
 
-For each material claim record:
+Do not convert user reports into observations or plausible inferences into facts.
+Keep material contradictions visible.
 
-| Field | Meaning |
-|---|---|
-| ID | Stable claim ID |
-| Kind | observation, attributed-report, inference, assumption, unknown, preference |
-| Claim | One decision-relevant statement |
-| Support | supported, mixed, unsupported, not-applicable |
-| Evidence | Retrievable source or direct observation |
-| Counterevidence | Evidence that weakens or contradicts the claim |
-| Decision impact | What changes if this claim is wrong |
-| Next check / stop | Cheapest useful check, or why more checking is not worth it |
+## Bounded experiments
 
-Do not convert user reports into observations. Do not convert an inference into a
-fact because it is plausible. Do not fabricate citations, interviews,
-measurements, experiments, precision, or consensus.
+Use an experiment when observation can answer a load-bearing question more
+cheaply or credibly than more discussion.
 
-Prefer primary documentation, the actual repository/version in question, direct
-observations, and attributable user material. Record source freshness when it can
-change the decision.
+Before execution, record:
+- question and hypothesis,
+- scope/exposure,
+- method,
+- observation/metric,
+- decision rule describing what result would change the decision,
+- stop condition.
 
-Research stops when another reasonable check is unlikely to alter the choice, an
-agreed time/cost bound is reached, or an essential input is unavailable. Report
-the residual uncertainty rather than hiding it.
+After execution record the actual action, result, limitations, and affected claim
+IDs. Never define the decision rule after seeing the result.
 
-Research may recommend a direction. That recommendation is advisory until the
-human explicitly chooses.
+Experiments do not gain production authority merely because they are part of ITP.
 
-## Experiments
+## Stop research deliberately
 
-Use an experiment when a load-bearing question can be answered more cheaply or
-credibly by observation than by more discussion.
+Stop when the high-criticality weak claims are resolved enough for the decision,
+another reasonable check is unlikely to change the choice, an agreed bound is
+reached, or an essential input is unavailable.
 
-A bounded experiment records:
+Residual uncertainty remains visible. Research may recommend a direction, but it
+cannot make the human decision.
 
-- ID and question
-- hypothesis
-- scope/exposure
-- method
-- observation or metric
-- decision rule
-- stop condition
-- environment and exact action actually taken
-- result
-- limitations
-- claim IDs updated by the result
+## Decide with an appetite
 
-An experiment promise commits to performing a bounded learning activity and
-applying its decision rule. It never promises a favorable result.
+The decide stage reduces the work to viable options and distinguishes:
+- evidence,
+- uncertainty,
+- preferences,
+- binding constraints,
+- appetite.
 
-Experiments do not receive production authority from this protocol. External or
-persistent effects require the same explicit authority they would require outside
-ITP.
+Appetite answers **how much is this outcome worth?** It may bound effort,
+complexity, operational burden, or experiment exposure. It is not an estimate or
+a guarantee that delivery will fit.
 
-## Decide
+Use appetite to reject, shrink, or reshape options that demand more than the
+outcome is worth.
 
-The `decide` stage turns research into a clear human choice without pretending
-that evidence chooses values or tradeoffs automatically.
-
-It should:
-
-- reduce the work to genuinely viable options,
-- explain the important tradeoffs in plain language,
-- separate evidence from uncertainty, preference, and binding constraints,
-- identify any load-bearing unknown that still blocks a responsible choice,
-- make any recommendation explicitly advisory,
-- ask the human to choose pursue, experiment, defer, or reject.
-
-Only an explicit attributable human choice creates or updates the decision record.
-A research recommendation must never be copied into `decision.md` as though the
-human selected it.
-
-A decision record distinguishes:
-
-- evidence-supported conclusions,
-- unresolved load-bearing unknowns,
-- preferences/tradeoffs,
-- the human-selected direction,
-- alternatives rejected or deferred and why,
-- revisit triggers.
-
-Valid terminal directions are `pursue`, `experiment`, `defer`, and `reject`.
-A no-build outcome is valid; never manufacture a promise solely to continue the
-workflow.
+Only an explicit attributable human choice creates or updates decision.md.
+Valid directions remain pursue, experiment, defer, and reject.
 
 ## Independent challenge
 
-Before shaping a consequential promise, a separate `challenge-decision` review
-may test whether the decision follows from the evidence, whether important
-counterevidence was ignored, whether alternatives were dismissed for unsupported
-reasons, and whether load-bearing unknowns remain.
+For consequential work, challenge-decision checks the evidence-to-decision path
+and then adds two focused techniques.
 
-Challenge findings are advisory. They cannot silently change the decision or
-promise. Small, reversible decisions may skip this optional stage.
+### Rabbit holes
 
-## Promise and approval
+Identify concrete areas where hidden complexity, dependencies, migration,
+operations, security, adoption, integration, or organizational work could
+disproportionately threaten the outcome or appetite.
 
-A source promise separates binding content from advisory rationale.
+Do not emit a generic risk checklist. Every rabbit hole needs a plausible trigger
+and a cheap way to bound it where possible.
 
-Binding:
-- intended observable outcome,
-- promised behavior,
-- boundaries,
-- non-goals,
-- binding constraints,
-- for an experiment: exposure, observation, stop and decision rules.
+### Premortem
 
-Advisory:
-- research summary,
-- rationale,
-- alternatives,
-- implementation ideas.
+Assume the decision was pursued and six months later clearly failed to deliver
+the intended outcome. Identify the few most plausible causal explanations grounded
+in the current context.
 
-A proposal is `DRAFT` until a human approves the exact durable source text.
-Approval must name the promise path, revision, exact SHA-256, approver or
-attributable approval source, and approval time/context when available.
+Classify each as already covered, worth a bounded check, a reason to change the
+decision, or acceptable residual risk.
 
-A saved file, recommendation, issue label, or heading is not approval.
+Challenge findings are advisory and cannot silently replace the human decision.
 
-If the promise bytes change after approval, the old approval no longer covers the
-new source. Create a new revision and obtain renewed approval.
+## Work backwards from the future experience
 
-## Handoff to Promise to Proof
+Before shaping the promise, explain the beneficiary's future experience:
+- what they can now do, understand, avoid, or accomplish,
+- why that is meaningfully better than the current workaround,
+- which opportunity it addresses,
+- what skeptical question could expose vagueness or overbreadth.
 
-After exact source approval, create a handoff record containing the durable source
-path, revision, exact SHA-256, and approval reference. Then invoke P2P separately:
+If the value can only be explained in implementation terms, or the future is not
+clearly better, return to framing/decision rather than polishing the promise.
+
+## Work item and exact approval
+
+Active discovery records remain under .itp/work/<slug>/ and the final durable
+promise normally lives in a project-owned path such as specs/<slug>.md.
+
+Promises use human-readable revisions. Exact approval remains bound to SHA-256 of
+the exact UTF-8 bytes of the durable promise. Any byte change invalidates the old
+approval.
+
+After exact source approval, hand the promise to P2P separately:
 
 ```text
 /plan-acceptance <agreed-source-path>
 ```
 
-P2P applies its own acceptance planning and approval rules. ITP approval does not
-approve a later P2P acceptance contract and does not authorize implementation,
-commit, push, publication, or merge.
+ITP approval does not approve the later P2P acceptance contract or authorize
+implementation, commit, push, publication, or merge.

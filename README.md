@@ -29,33 +29,57 @@ For stage-by-stage work:
 /shape-promise <decision record>
 ```
 
-These are agent skills, not shell commands. Invoke them through a compatible
-host's skill interface.
+These are agent skills, not shell commands.
 
 ## Seven skills
 
-| Skill | Question | Durable result |
-|---|---|---|
-| [`frame`](skills/productivity/frame/SKILL.md) | What problem are we actually addressing? | frame.md |
-| [`brainstorm`](skills/productivity/brainstorm/SKILL.md) | What genuinely different paths could work? | alternatives.md |
-| [`research`](skills/productivity/research/SKILL.md) | What evidence could change the choice? | research.md + experiments/ |
-| [`decide`](skills/productivity/decide/SKILL.md) | Given what we know, what do you choose? | decision.md |
-| [`challenge-decision`](skills/productivity/challenge-decision/SKILL.md) | Does that choice actually hold up? | challenge.md |
-| [`shape-promise`](skills/productivity/shape-promise/SKILL.md) | What exact outcome are we prepared to promise? | promise draft + approval/handoff |
-| [`discover`](skills/productivity/discover/SKILL.md) | How do we move the idea through the whole discovery loop? | coordinated work item |
+| Skill | Main question |
+|---|---|
+| [`frame`](skills/productivity/frame/SKILL.md) | What progress is someone actually trying to make, and what happens today? |
+| [`brainstorm`](skills/productivity/brainstorm/SKILL.md) | What underlying opportunities exist, and what genuinely different solutions could address them? |
+| [`research`](skills/productivity/research/SKILL.md) | Which load-bearing assumptions are weakly evidenced, and what should we learn first? |
+| [`decide`](skills/productivity/decide/SKILL.md) | Given the evidence and our appetite, what do we choose? |
+| [`challenge-decision`](skills/productivity/challenge-decision/SKILL.md) | What could blow up the decision or make it fail? |
+| [`shape-promise`](skills/productivity/shape-promise/SKILL.md) | What future experience are we actually willing to promise? |
+| [`discover`](skills/productivity/discover/SKILL.md) | How do we guide the whole discovery loop? |
 
-The stages are intentionally not a rigid pipeline. New evidence may return the
-work to alternatives or research. A no-build result is a valid outcome.
+The stages are intentionally not rigid. New evidence may send the work back to
+framing, opportunities, or research. A no-build result is valid.
 
-The important separation is:
+## The v0.4 discovery loop
 
 ```text
-research  →  what the evidence says
-decide    →  what the human chooses
-promise   →  what the human is willing to commit to
+real need / job
+      ↓
+opportunity space
+      ↓
+solution alternatives
+      ↓
+riskiest assumptions
+      ↓
+research ↔ bounded experiment
+      ↓
+human decision + appetite
+      ↓
+rabbit holes + premortem (when useful)
+      ↓
+future-experience check
+      ↓
+exact approved promise
+      ↓
+Promise to Proof
 ```
 
-## v0.3 work-item model
+The main ideas are simple:
+
+- Understand the real progress sought before discussing features.
+- Explore the problem/opportunity space before the solution space.
+- Research the weakest load-bearing assumptions first.
+- Decide how much the outcome is worth before accepting complexity.
+- Try to explain how the decision could fail before committing.
+- Make sure the promised future is actually better for the beneficiary.
+
+## Work-item model
 
 Active discovery state lives locally under:
 
@@ -72,79 +96,47 @@ Active discovery state lives locally under:
 └── handoff.md
 ```
 
-The directory is ignored by default because discovery can contain provisional or
-sensitive material. The final agreed promise is a normal project-owned source
-document, commonly:
+The final agreed promise is a normal project-owned source document, commonly
+`specs/<slug>.md`. It must stand on its own.
 
-```text
-specs/<slug>.md
-```
+See the [artifact format](docs/artifact-format.md),
+[discovery protocol](docs/discovery-protocol.md), and
+[workflow guide](docs/how-to.md).
 
-The final source must stand on its own; Promise to Proof must not need a previous
-chat or ignored ITP files just to understand the binding promise.
+## Research discipline
 
-See the [artifact format](docs/artifact-format.md) and
-[discovery protocol](docs/discovery-protocol.md).
+Research uses stable claim IDs C1, C2, ... and now also records:
 
-## Claim ledger and experiments
+- **criticality** — how much the decision depends on the claim,
+- **evidence strength** — how well it is supported,
+- **risk lens** — e.g. desirability, feasibility, viability, adaptability, compliance.
 
-Research uses stable claim IDs (C1, C2, …) and distinguishes observations,
-attributed reports, inferences, assumptions, unknowns, and preferences. Each
-material claim records evidence, counterevidence, decision impact, and either the
-next useful check or a reason to stop.
+ITP prioritizes high-criticality claims with weak/no evidence rather than
+researching everything equally.
 
-When observation is cheaper or more credible than more discussion, ITP can use a
-bounded experiment (E1, E2, …) with an explicit exposure, observation, decision
-rule, stop condition, actual result, and limitations. An experiment plan is never
-treated as evidence that the expected outcome happened.
+Experiments precommit to the observation, decision rule, and stop condition before
+the result is known.
 
-## Explicit human decision
+## Decision discipline
 
-`/decide` sits between research and promise shaping. It reduces the work to the
-real viable choices, explains the tradeoffs in plain language, distinguishes
-evidence from preference, and asks the human to choose.
+`/decide` separates evidence from preference and asks the human to set an
+**appetite**: how much effort, complexity, operational burden, or experiment risk
+the outcome is worth. Appetite is a decision boundary, not an implementation
+estimate.
 
-It may recommend an option, but it cannot silently turn that recommendation into
-the decision. If a load-bearing unknown still prevents a responsible choice,
-`/decide` sends the work back to research or a bounded experiment.
+For consequential choices, `/challenge-decision` looks for concrete rabbit holes
+and runs a grounded premortem: assume the decision failed and ask why.
 
-## Promise identity and approval
+## Promise discipline
 
-Promises use human-readable revisions such as v1 and v2. Material changes to
-promised behavior, boundaries, binding constraints, or experiment decision rules
-require a new revision and renewed approval.
+Before drafting, `/shape-promise` works backwards from the beneficiary's future
+experience. If the promise cannot explain what is meaningfully better without
+falling back to implementation details, it is not ready.
 
-Approval binds the **exact UTF-8 bytes** of the durable promise using:
-
-```text
-promise:sha256:<64 lowercase hex>
-```
-
-Compute it with:
-
-```bash
-python3 scripts/promise_identity.py specs/<slug>.md
-```
-
-The approval and handoff records store that identity outside the hashed promise,
-avoiding a self-referential hash. Any byte change makes the old approval stale.
-
-Validate the structural handoff with:
-
-```bash
-python3 scripts/check_work_item.py .itp/work/<slug> --promise specs/<slug>.md
-```
-
-The checker validates shape and identity only. It does not judge product value,
-evidence quality, approval authenticity, or implementation readiness.
+Promises retain exact-byte SHA-256 identity and explicit approval before handoff
+to P2P.
 
 ## Handoff to Promise to Proof
-
-ITP owns framing, alternatives, decision-directed research, experiments for
-learning, explicit human decision support, and exact source-promise approval.
-
-Promise to Proof owns acceptance planning, evidence planning, implementation,
-candidate identity, review, proof, repair, and publication/merge-readiness rules.
 
 After exact source approval and a matching identity:
 
@@ -152,21 +144,12 @@ After exact source approval and a matching identity:
 /plan-acceptance specs/<slug>.md
 ```
 
-Source approval does not approve the later P2P acceptance contract and does not
-authorize implementation or publication.
-
-Read the [P2P handoff guide](docs/p2p-handoff.md).
+ITP does not create the P2P acceptance contract or authorize implementation.
 
 ## Install
 
 ```bash
 npx skills@latest add grove/idea-to-promise
-```
-
-Install one skill:
-
-```bash
-npx skills@latest add grove/idea-to-promise --skill decide
 ```
 
 ## Checks
@@ -178,19 +161,7 @@ python3 -m unittest discover -s checks -p 'test_*.py' -v
 ```
 
 The [behavior scenarios](checks/scenarios.md) are evaluation cases for live
-agents. Passing unit tests does not establish that an agent makes good product
-decisions.
-
-## Design principles
-
-- Separate observations, reports, inferences, assumptions, unknowns, and preferences.
-- Research the questions most likely to change the decision.
-- Seek counterevidence and keep contradictions visible.
-- Stop research deliberately instead of maximizing information.
-- Keep research recommendation, human decision, and exact promise approval distinct.
-- Permit experiment, defer, and no-build outcomes.
-- Preserve exact promise identity across the P2P boundary.
-- Never treat source approval as implementation or publication authority.
+agents. Passing unit tests does not prove good product judgment.
 
 ## Contributing and license
 
