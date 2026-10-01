@@ -1,0 +1,10 @@
+/.itp/
+/.p2p/
+/.agents/
+/.claude/
+/.codex/
+/skills-lock.json
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
