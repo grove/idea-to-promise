@@ -25,10 +25,10 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def load(path: Path):
+def load(path: Path, limit: int = 64_000_000):
     data = path.read_bytes()
-    if len(data) > LIMIT:
-        raise ValueError(f'input exceeds {LIMIT} bytes: {path}')
+    if len(data) > limit:
+        raise ValueError(f'input exceeds {limit} bytes: {path}')
     return json.loads(data)
 
 
@@ -48,7 +48,7 @@ def virtual(files):
 
 
 def cases(path: Path):
-    values = load(path)
+    values = load(path, limit=LIMIT)
     if not isinstance(values, list) or not values:
         raise ValueError('case suite must be a nonempty array')
     seen = set()
@@ -178,6 +178,14 @@ def report(run_path: Path, review_path: Path | None):
         raise ValueError('not a nonempty captured evaluation run')
     if run['status'] != 'captured':
         raise ValueError('prepared cases are not executed trials')
+    ids = [c['id'] for c in run['cases']]
+    if len(ids) != len(set(ids)):
+        raise ValueError('duplicate case IDs in captured run')
+    for c in run['cases']:
+        if not c.get('rubric') or c.get('status') not in ('captured', 'error'):
+            raise ValueError('case lacks rubric or captured/error status')
+        if c['status'] == 'captured' and not c.get('turns'):
+            raise ValueError('captured case has no actual turns')
     review = load(review_path) if review_path else {'judgments': []}
     if review_path and (review.get('run_sha256') != digest(run_path.read_bytes()) or not review.get('reviewer', '').strip()):
         raise ValueError('review needs a reviewer and must bind this exact run')

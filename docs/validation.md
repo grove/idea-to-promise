@@ -29,7 +29,7 @@ reviewed with explicit excerpts and all incomplete/error cases retained.
 
 ## Local release checks
 
-The local Python/Git suite passed 41 tests, including fixture capture, deliberate
+The local Python/Git suite passed 43 tests, including fixture capture, deliberate
 negative controls, source/receipt drift, path conflicts and standalone package
 closure. Preparing the 10-case suite succeeded without model execution.
 An actual npm installer smoke attempt failed at DNS resolution for
