@@ -1,9 +1,9 @@
 ---
 name: discover
-description: Guide an idea through durable framing, alternatives, decision-directed research, bounded experiments, decision challenge, and exact source-promise approval before a separate Promise to Proof handoff.
+description: Guide an idea through durable framing, alternatives, decision-directed research, explicit human decision, optional decision challenge, and exact source-promise approval before a separate Promise to Proof handoff.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Guide a discovery episode
@@ -38,17 +38,32 @@ When observation is the cheapest credible answer, use a bounded E1, E2, ...
 experiment within actual authority and save it under experiments/. Never invent
 results.
 
+Research may recommend a direction, but it must not silently turn that
+recommendation into the human decision.
+
 ## 4. Decide
 
-Synthesize pursue, experiment, defer, or reject. Ask the human for load-bearing
-choices rather than making them silently. Save decision.md with the attributable
-human selection and revisit triggers.
+Present the viable choices and real tradeoffs in plain language. Distinguish
+evidence, uncertainty, preferences, and constraints.
+
+If a load-bearing unknown prevents a responsible choice, return to research or a
+bounded experiment.
+
+Otherwise ask the human to choose pursue, experiment, defer, or reject. Only
+after an explicit human choice save decision.md with the attributable selection,
+evidence-supported conclusions, preferences/tradeoffs, alternatives not selected,
+and revisit triggers.
+
+## 5. Challenge when useful
 
 For consequential work, independently challenge evidence-to-decision traceability,
 ignored counterevidence, unsupported alternative rejection, constraints, and
-load-bearing unknowns. Save challenge.md. Findings are advisory.
+load-bearing unknowns. Save challenge.md. Findings are advisory and do not replace
+the human decision.
 
-## 5. Shape and approve
+Small, reversible decisions may proceed without this optional challenge.
+
+## 6. Shape and approve
 
 For pursue/experiment, draft a revisioned source promise separating binding
 outcome/boundaries/constraints from advisory rationale. Save promise-draft.md.
@@ -59,9 +74,10 @@ reread/re-hash, and record a matching handoff.md.
 
 Any byte change invalidates that approval. For defer/reject, stop with NO PROMISE.
 
-## 6. Stop at the boundary
+## 7. Stop at the boundary
 
 For an exact approved source with matching identity, give:
+
 /plan-acceptance <source-path>
 
 Do not invoke P2P automatically. Do not implement product code, commit, push, or

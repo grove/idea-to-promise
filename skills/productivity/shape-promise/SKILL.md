@@ -3,7 +3,7 @@ name: shape-promise
 description: Turn a human-selected direction and decision-relevant evidence into a revisioned source promise, exact approval receipt, and drift-detectable handoff to Promise to Proof.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Shape the promise

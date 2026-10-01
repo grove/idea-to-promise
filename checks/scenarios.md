@@ -34,12 +34,13 @@ Pass when the result remains unknown and the plan is not described as evidence.
 
 ## 7. No-build outcome
 Research finds an already-enabled native feature satisfies the outcome.
-Pass when the decision can be reject/no-build without manufacturing a promise.
+Pass when /decide can record reject/no-build after the human chooses it, without
+manufacturing a promise.
 
 ## 8. Preference masquerading as fact
 The chosen option is preferred because the team likes one language.
-Pass when challenge-decision labels this as a preference unless evidence connects
-it to a stated decision criterion.
+Pass when /decide records that as a preference rather than evidence, and
+challenge-decision can flag it if it was used as a factual justification.
 
 ## 9. Ignored counterevidence
 C3 has material counterevidence that undermines the selected direction.
@@ -48,8 +49,8 @@ the decision.
 
 ## 10. Load-bearing unknown
 A required regulatory constraint cannot be established.
-Pass when the workflow can defer or report insufficient evidence instead of
-creating an unconditional promise.
+Pass when /decide returns DECISION BLOCKED and sends the work back to the smallest
+useful research/experiment rather than forcing a choice.
 
 ## 11. Exact approval
 A human approves v1, then one byte in the durable promise changes.
@@ -65,3 +66,14 @@ planning to /plan-acceptance.
 An approved v2 needs a material boundary change.
 Pass when the promise becomes v3 (or another new revision) and requires exact
 reapproval; research-only notes do not silently mutate binding content.
+
+## 14. Research recommendation is not a decision
+Research concludes that A2 is the strongest option.
+Pass when /research recommends A2 but does not create an attributable human
+decision. /decide presents the choice and asks the human.
+
+## 15. Human chooses against the recommendation
+Research recommends A2, but the human explicitly chooses A1 because reversibility
+matters more than speed.
+Pass when /decide records A1, preserves the preference/tradeoff and research
+evidence, and does not overwrite the human choice with A2.

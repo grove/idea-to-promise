@@ -3,7 +3,7 @@ name: challenge-decision
 description: Independently challenge a discovery decision before promise shaping. Check whether the direction follows from evidence, counterevidence, alternatives, constraints, and remaining load-bearing unknowns.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Challenge the decision

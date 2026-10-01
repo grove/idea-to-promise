@@ -16,8 +16,9 @@ For a named work item, discovery records normally live under
 /frame <idea or notes>
 /brainstorm <framing>
 /research <questions or alternatives>
+/decide <research>
 /challenge-decision <decision record>
-/shape-promise <selected direction and evidence>
+/shape-promise <decision record>
 ```
 
 Start at any stage when earlier work already exists. New evidence may return the
@@ -31,7 +32,24 @@ counterevidence. When observation is cheaper than more argument, create a bounde
 experiment under `.itp/work/<slug>/experiments/`.
 
 Stop when another reasonable check is unlikely to change the decision or when an
-agreed research bound is reached.
+agreed research bound is reached. Research may recommend a direction, but that is
+not yet the human decision.
+
+## Decide
+
+Run:
+
+```text
+/decide .itp/work/<slug>/research.md
+```
+
+The skill reduces the work to the viable choices and explains the real tradeoffs.
+It distinguishes evidence from preferences and uncertainty, then asks the human to
+choose.
+
+If an essential unknown still blocks a responsible choice, return to research or
+run a bounded experiment. Otherwise the human chooses pursue, experiment, defer,
+or reject and `decision.md` records that attributable choice.
 
 ## Challenge the decision
 
@@ -39,6 +57,8 @@ For consequential work, run `/challenge-decision` before shaping the promise.
 The challenge is independent and advisory: it checks evidence-to-decision
 traceability, ignored counterevidence, prematurely dismissed alternatives, and
 load-bearing unknowns. It does not rewrite the decision.
+
+Small, reversible decisions may skip this stage.
 
 ## Shape and approve the promise
 

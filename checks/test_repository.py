@@ -9,11 +9,12 @@ SKILLS = ROOT / "skills" / "productivity"
 
 
 class RepositoryTests(unittest.TestCase):
-    def test_expected_skills_exist_and_are_v020(self) -> None:
+    def test_expected_skills_exist_and_are_v030(self) -> None:
         expected = {
             "frame",
             "brainstorm",
             "research",
+            "decide",
             "challenge-decision",
             "shape-promise",
             "discover",
@@ -24,7 +25,7 @@ class RepositoryTests(unittest.TestCase):
             text = (SKILLS / name / "SKILL.md").read_text(encoding="utf-8")
             self.assertTrue(text.startswith("---\n"))
             self.assertIn(f"name: {name}\n", text)
-            self.assertIn('version: "0.2.0"', text)
+            self.assertIn('version: "0.3.0"', text)
 
     def test_markdown_relative_links_resolve(self) -> None:
         pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")

@@ -4,7 +4,7 @@ Decision ID: D1
 Direction: pursue | experiment | defer | reject
 
 ## Selected direction
-<what the human selected>
+<the explicit human choice>
 
 ## Evidence-supported conclusions
 - C1 — <conclusion>
@@ -13,7 +13,7 @@ Direction: pursue | experiment | defer | reject
 - <remaining unknown or None>
 
 ## Preferences and tradeoffs
-- <preference explicitly distinguished from evidence>
+- <human preference explicitly distinguished from evidence>
 
 ## Alternatives not selected
 - A1 — <reason>
@@ -24,3 +24,5 @@ Decision context: <conversation, issue, meeting, etc.>
 
 ## Revisit triggers
 - <condition that should reopen the decision>
+
+This record represents the human choice, not merely the research recommendation.

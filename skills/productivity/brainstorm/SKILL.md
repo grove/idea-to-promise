@@ -3,7 +3,7 @@ name: brainstorm
 description: Explore genuinely different approaches to a framed problem or idea. Include the status quo, existing capabilities, smaller interventions, and materially distinct solution mechanisms.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Explore alternatives

@@ -1,6 +1,6 @@
 # Discovery artifact format
 
-This document defines the lightweight v0.2 record shapes. Templates under
+This document defines the lightweight v0.3 record shapes. Templates under
 `templates/` are the canonical starting points.
 
 ## Local work root
@@ -14,7 +14,7 @@ Core records:
 - `alternatives.md` — genuinely different approaches and cheap checks.
 - `research.md` — decision questions and stable claim ledger.
 - `experiments/<name>.md` — bounded learning activities and actual results.
-- `decision.md` — selected direction, rationale, unknowns, revisit triggers.
+- `decision.md` — explicit attributable human choice, rationale, unknowns, tradeoffs, revisit triggers.
 - `challenge.md` — independent advisory review of the decision.
 - `promise-draft.md` — proposed source promise before durable publication.
 - `approval.md` — exact promise revision/hash and attributable approval.
@@ -23,6 +23,15 @@ Core records:
 A project may retain selected discovery records in project-owned tracked paths.
 Do not publish private or licensed research merely because a template names a
 field for it.
+
+## Decision record
+
+The decision record is created by `/decide` only after an explicit human choice.
+A leading research recommendation is not a decision.
+
+The record must distinguish evidence-supported conclusions from preferences and
+remaining unknowns, identify the selected direction, preserve why viable
+alternatives were not selected, and name revisit triggers.
 
 ## Durable promise
 

@@ -24,28 +24,38 @@ For stage-by-stage work:
 /frame <idea or notes>
 /brainstorm <framing>
 /research <questions or alternatives>
+/decide <research>
 /challenge-decision <decision record>
-/shape-promise <selected direction and evidence>
+/shape-promise <decision record>
 ```
 
 These are agent skills, not shell commands. Invoke them through a compatible
 host's skill interface.
 
-## Six skills
+## Seven skills
 
 | Skill | Question | Durable result |
 |---|---|---|
 | [`frame`](skills/productivity/frame/SKILL.md) | What problem are we actually addressing? | frame.md |
 | [`brainstorm`](skills/productivity/brainstorm/SKILL.md) | What genuinely different paths could work? | alternatives.md |
-| [`research`](skills/productivity/research/SKILL.md) | What evidence could change the decision? | research.md + experiments/ |
-| [`challenge-decision`](skills/productivity/challenge-decision/SKILL.md) | Does the decision actually follow from the evidence? | challenge.md |
+| [`research`](skills/productivity/research/SKILL.md) | What evidence could change the choice? | research.md + experiments/ |
+| [`decide`](skills/productivity/decide/SKILL.md) | Given what we know, what do you choose? | decision.md |
+| [`challenge-decision`](skills/productivity/challenge-decision/SKILL.md) | Does that choice actually hold up? | challenge.md |
 | [`shape-promise`](skills/productivity/shape-promise/SKILL.md) | What exact outcome are we prepared to promise? | promise draft + approval/handoff |
 | [`discover`](skills/productivity/discover/SKILL.md) | How do we move the idea through the whole discovery loop? | coordinated work item |
 
 The stages are intentionally not a rigid pipeline. New evidence may return the
 work to alternatives or research. A no-build result is a valid outcome.
 
-## v0.2 work-item model
+The important separation is:
+
+```text
+research  →  what the evidence says
+decide    →  what the human chooses
+promise   →  what the human is willing to commit to
+```
+
+## v0.3 work-item model
 
 Active discovery state lives locally under:
 
@@ -88,6 +98,16 @@ bounded experiment (E1, E2, …) with an explicit exposure, observation, decisio
 rule, stop condition, actual result, and limitations. An experiment plan is never
 treated as evidence that the expected outcome happened.
 
+## Explicit human decision
+
+`/decide` sits between research and promise shaping. It reduces the work to the
+real viable choices, explains the tradeoffs in plain language, distinguishes
+evidence from preference, and asks the human to choose.
+
+It may recommend an option, but it cannot silently turn that recommendation into
+the decision. If a load-bearing unknown still prevents a responsible choice,
+`/decide` sends the work back to research or a bounded experiment.
+
 ## Promise identity and approval
 
 Promises use human-readable revisions such as v1 and v2. Material changes to
@@ -121,7 +141,7 @@ evidence quality, approval authenticity, or implementation readiness.
 ## Handoff to Promise to Proof
 
 ITP owns framing, alternatives, decision-directed research, experiments for
-learning, human decision support, and exact source-promise approval.
+learning, explicit human decision support, and exact source-promise approval.
 
 Promise to Proof owns acceptance planning, evidence planning, implementation,
 candidate identity, review, proof, repair, and publication/merge-readiness rules.
@@ -146,7 +166,7 @@ npx skills@latest add grove/idea-to-promise
 Install one skill:
 
 ```bash
-npx skills@latest add grove/idea-to-promise --skill research
+npx skills@latest add grove/idea-to-promise --skill decide
 ```
 
 ## Checks
@@ -167,7 +187,7 @@ decisions.
 - Research the questions most likely to change the decision.
 - Seek counterevidence and keep contradictions visible.
 - Stop research deliberately instead of maximizing information.
-- Keep recommendation, human decision, and exact promise approval distinct.
+- Keep research recommendation, human decision, and exact promise approval distinct.
 - Permit experiment, defer, and no-build outcomes.
 - Preserve exact promise identity across the P2P boundary.
 - Never treat source approval as implementation or publication authority.

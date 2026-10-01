@@ -3,7 +3,7 @@ name: research
 description: Investigate decision-changing questions about an idea or approach. Maintain stable claim IDs, evidence and counterevidence, bounded experiments, and an explicit research stopping decision.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Research for a decision
@@ -13,7 +13,7 @@ Research should reduce specific uncertainty, not produce a generic report.
 ## Work record
 
 When a work item exists, read its framing, alternatives, current research,
-experiments, and decisions. Save the claim ledger and synthesis to
+experiments, and prior decisions. Save the claim ledger and synthesis to
 .itp/work/<slug>/research.md. Save bounded experiments under
 .itp/work/<slug>/experiments/<name>.md.
 
@@ -61,10 +61,13 @@ Stop when another reasonable check is unlikely to change the decision, an agreed
 time/cost bound is reached, or an essential input is unavailable. State residual
 uncertainty.
 
-End with one synthesis: pursue, experiment, defer, or reject, with the evidence
-and uncertainty that support it. This is advisory until the human selects a
-direction.
+End with an advisory synthesis: which alternatives remain viable, which are ruled
+out by evidence or constraints, the important tradeoffs, residual uncertainty,
+and any evidence-supported recommendation. Do not record a human decision.
 
-For consequential decisions, suggest /challenge-decision
-.itp/work/<slug>/decision.md after the human decision is recorded. Do not
-implement or invoke P2P.
+The normal next step is:
+
+/decide .itp/work/<slug>/research.md
+
+If a load-bearing unknown still prevents a meaningful choice, name the exact
+research or experiment needed instead. Do not implement or invoke P2P.

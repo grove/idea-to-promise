@@ -3,7 +3,7 @@ name: frame
 description: Frame an idea, opportunity, or rough request before brainstorming or research. Establish the problem, audience, outcome, constraints, decision criteria, and decision-changing unknowns as a durable discovery record.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Frame the problem

@@ -10,9 +10,13 @@ ITP answers **what should we promise, and why?** Promise to Proof (P2P) answers
 can we prove it?**
 
 ```text
-idea → frame → alternatives → research ↔ experiment → decision → source promise
-                                                               ↓
-                                                        Promise to Proof
+idea → frame → alternatives → research ↔ experiment → decide → decision
+                                                             ↓
+                                                        challenge?
+                                                             ↓
+                                                       source promise
+                                                             ↓
+                                                      Promise to Proof
 ```
 
 ITP must not create P2P acceptance matrices, select proof oracles, invent
@@ -31,8 +35,8 @@ Active discovery records live under:
 ├── experiments/
 │   └── <experiment>.md
 ├── decision.md
-├── promise-draft.md
 ├── challenge.md
+├── promise-draft.md
 ├── approval.md
 └── handoff.md
 ```
@@ -97,6 +101,9 @@ Research stops when another reasonable check is unlikely to alter the choice, an
 agreed time/cost bound is reached, or an essential input is unavailable. Report
 the residual uncertainty rather than hiding it.
 
+Research may recommend a direction. That recommendation is advisory until the
+human explicitly chooses.
+
 ## Experiments
 
 Use an experiment when a load-bearing question can be answered more cheaply or
@@ -123,7 +130,23 @@ Experiments do not receive production authority from this protocol. External or
 persistent effects require the same explicit authority they would require outside
 ITP.
 
-## Decision
+## Decide
+
+The `decide` stage turns research into a clear human choice without pretending
+that evidence chooses values or tradeoffs automatically.
+
+It should:
+
+- reduce the work to genuinely viable options,
+- explain the important tradeoffs in plain language,
+- separate evidence from uncertainty, preference, and binding constraints,
+- identify any load-bearing unknown that still blocks a responsible choice,
+- make any recommendation explicitly advisory,
+- ask the human to choose pursue, experiment, defer, or reject.
+
+Only an explicit attributable human choice creates or updates the decision record.
+A research recommendation must never be copied into `decision.md` as though the
+human selected it.
 
 A decision record distinguishes:
 
@@ -146,7 +169,7 @@ counterevidence was ignored, whether alternatives were dismissed for unsupported
 reasons, and whether load-bearing unknowns remain.
 
 Challenge findings are advisory. They cannot silently change the decision or
-promise.
+promise. Small, reversible decisions may skip this optional stage.
 
 ## Promise and approval
 
