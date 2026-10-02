@@ -36,10 +36,12 @@ class OnboardingDocsTests(unittest.TestCase):
 
     def test_getting_started_teaches_boundaries(self) -> None:
         text = (ROOT / "docs/getting-started.md").read_text(encoding="utf-8")
-        self.assertIn("You make the decision", text)
-        self.assertIn("exact promise", text)
+        lowered = text.lower()
+        self.assertIn("you make the decision", lowered)
+        self.assertIn("exact promise", lowered)
         self.assertIn("/plan-acceptance", text)
-        self.assertIn("don't build", text.lower())
+        self.assertIn("what if the answer is", lowered)
+        self.assertIn("build promise", lowered)
 
     def test_mental_model_names_core_concepts(self) -> None:
         text = (ROOT / "docs/mental-model.md").read_text(encoding="utf-8")
