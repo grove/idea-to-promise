@@ -34,6 +34,8 @@ A **decision** is what the human chooses.
 
 Research can recommend. An agent can explain tradeoffs. A challenge can expose a problem. None of those automatically becomes the decision.
 
+When ITP presents alternatives, it should make them easy for a human to understand: a short list, plain-language explanations, the strongest reason to choose each option, and the main downside. It should then recommend one option—or a small shortlist when the evidence is genuinely close—and explain why. The recommendation is useful decision support, not a substitute for the human choice.
+
 A decision may be:
 
 - pursue an option,

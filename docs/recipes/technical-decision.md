@@ -22,6 +22,8 @@ If a critical performance or feasibility assumption can be tested cheaply, ITP m
 
 The decision should also make appetite and reversibility explicit. A theoretically powerful architecture may still be the wrong choice if the problem is only worth a small intervention.
 
+When the alternatives are shown to you, they should be easy to scan rather than buried in a dense architecture table. Each should have a plain-language explanation, its strongest reason, and its main downside, followed by ITP's recommendation or recommended shortlist.
+
 ## Healthy result
 
 The human chooses a direction with a clear decision basis, important unknowns remain visible, and the resulting promise states the technical behavior or boundary precisely enough for P2P to plan acceptance later.

@@ -376,5 +376,32 @@
       "Records the real-world outcome as not assessed because no outcome observations exist.",
       "Keeps any learning advisory and does not silently amend the promise."
     ]
+  },
+  {
+    "id": "alternatives-plain-with-recommendation",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {},
+    "turns": [
+      {
+        "user": "Fictional case. We need to reduce duplicate uploads on retries. We know three plausible paths: A1 enable the platform's existing retry-token support, A2 build a new deduplication service, or A3 keep the current behavior and have operators clean up duplicates manually. The existing retry-token capability is documented for our deployed version, but we have not yet observed it under our exact workload. Present the alternatives so a non-specialist can choose. Do not make the decision for me.",
+        "checks": {
+          "forbid_suffix": [
+            "decision.md",
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Presents the alternatives in an easy-to-scan list rather than a dense comparison dump.",
+      "Explains each alternative in plain language, including what it means, its strongest reason, and its main downside.",
+      "Gives a clearly labeled recommendation for one option or a small shortlist and explains why, including relevant uncertainty.",
+      "Keeps the recommendation advisory and does not record a human decision."
+    ]
   }
 ]

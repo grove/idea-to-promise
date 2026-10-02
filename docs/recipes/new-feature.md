@@ -20,7 +20,7 @@ ITP should separate the feature from the underlying need before investing deeply
 
 It should then explore genuinely different approaches, including an existing capability or a smaller intervention when those are credible. It should research only the assumptions that could materially change the choice.
 
-Eventually, it should make the real tradeoffs clear and ask the human to choose.
+Eventually, it should present the real alternatives as a simple list that explains what each option means, why you might choose it, and its main downside. It should then recommend the strongest option or small shortlist and explain the recommendation before asking the human to choose.
 
 ## Healthy result
 

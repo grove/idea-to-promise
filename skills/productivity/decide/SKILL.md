@@ -17,10 +17,32 @@ solution in contention. Explain evidence, uncertainty, preference, reversibility
 cost of being wrong, and appetite in ordinary language. Appetite is what the
 outcome is worth, not an estimate or a promise about delivery time.
 
+## Present the choices for a human
+
+Whenever you show alternatives to the user, use an easy-to-scan numbered or
+bulleted list by default. For each option provide:
+
+- **What it means:** a short explanation in ordinary language.
+- **Why you might choose it:** its strongest advantage for this decision.
+- **Main downside:** the most important tradeoff, risk, or cost.
+
+Prefer a few decision-relevant options over a long catalogue. Keep internal IDs
+available for traceability, but never make the user understand A-IDs/C-IDs merely
+to follow the choice.
+
+Always follow the alternatives with a clearly labeled **Recommendation**. Recommend
+one option when the evidence and stated preferences support it. Recommend a small
+shortlist when the evidence does not distinguish a single best choice. If a
+load-bearing unknown makes commitment premature, recommend the bounded experiment,
+deferral, or narrower option that best reduces the uncertainty.
+
+Explain the recommendation in plain language and name the uncertainty that could
+change it. Never turn the recommendation into the human decision.
+
 Reuse an explicit human choice and appetite already present; do not ask for them
-again without a material reason. Ask only for unresolved decisions. A recommendation
-stays advisory. If an unknown blocks an unconditional build, explain what it blocks
-and offer a bounded experiment, defer or no-build where applicable.
+again without a material reason. Ask only for unresolved decisions. If an unknown
+blocks an unconditional build, explain what it blocks and offer a bounded
+experiment, defer or no-build where applicable.
 
 ## Ownership without bureaucracy
 

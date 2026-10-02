@@ -46,6 +46,9 @@ Delivery success is not customer-value proof and historical advice is not a new
 requirement. Outcome observations must identify the relevant population, period
 and environment before generalizing.
 
-End with advisory synthesis and `/decide <research or notebook>`. Do not create an
-active decision or unconditional promise on the human's behalf. An unknown that
-blocks a build can still justify a bounded experiment or deferral.
+End with advisory synthesis and `/decide <research or notebook>`. When that
+synthesis presents multiple viable alternatives to the user, explain them in a
+simple numbered/bulleted list and give a clearly labeled recommendation or
+recommended shortlist with a short reason. The recommendation remains advisory.
+Do not create an active decision or unconditional promise on the human's behalf.
+An unknown that blocks a build can still justify a bounded experiment or deferral.

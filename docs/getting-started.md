@@ -28,7 +28,17 @@ Once the need is clearer, ITP should consider different ways to improve it. It m
 
 This is not brainstorming for its own sake. The purpose is to avoid spending research and engineering effort on several cosmetic versions of the same assumption.
 
-You should be able to see the real choices and why they differ.
+You should be able to see the real choices and why they differ without decoding methodology or internal IDs. ITP should normally show them as a short list. For example:
+
+1. **Highlight the unresolved question** — A small UI change that makes the current question obvious. **Why choose it:** simple and reversible. **Main downside:** it may not help with other parts of a long thread.
+2. **Add AI summaries** — Generate a short summary of the conversation. **Why choose it:** potentially helps with more of the ticket. **Main downside:** more uncertainty, operational complexity, and room for wrong summaries.
+3. **Use the current workflow** — Build nothing and keep reading the thread manually. **Why choose it:** no implementation cost. **Main downside:** the existing pain remains.
+
+After showing the options, ITP should give a clear recommendation. At this point it might say:
+
+> **Recommendation:** Start with highlighting the unresolved question. It directly addresses the clearest need, is easy to reverse, and does not depend on the still-uncertain value of AI summaries.
+
+If the evidence does not support one clear choice, ITP can recommend a small shortlist or recommend an experiment before committing.
 
 ## 3. Research only what could change the choice
 
@@ -50,7 +60,7 @@ After the useful evidence is on the table, ITP can explain something like:
 - AI summaries may produce a larger improvement, but the benefit is less certain and the operational complexity is higher.
 - Doing nothing remains reasonable if the current problem is rare enough.
 
-ITP may recommend a direction, but it does not convert that recommendation into your decision.
+ITP should recommend a direction whenever it presents alternatives, but it does not convert that recommendation into your decision. A good recommendation is short, explains why the option fits the evidence and your stated preferences, and says what uncertainty could change the recommendation.
 
 You might say:
 

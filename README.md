@@ -44,7 +44,7 @@ Suppose you start with:
 /discover We should add AI summaries to support tickets.
 ```
 
-ITP might help uncover that the real problem is not “we lack summaries,” but that support agents struggle to find the customer’s current unresolved question in long threads. It can then explore simpler alternatives, investigate the risky assumptions, explain the real tradeoffs, and ask **you** to choose.
+ITP might help uncover that the real problem is not “we lack summaries,” but that support agents struggle to find the customer’s current unresolved question in long threads. It then explains the sensible alternatives in plain language, shows the main upside and downside of each, and gives you a clear recommendation with the reason behind it. **You** still choose.
 
 A successful discovery may end with a promise such as:
 

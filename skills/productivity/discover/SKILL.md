@@ -54,6 +54,27 @@ existing capability and doing nothing. Research only decision-changing claims,
 starting with the weakest important assumption. Attribute evidence and preserve
 counterevidence. Experiments need precommitted rules and authorized exposure.
 
+## Make alternatives easy to understand
+
+Whenever you present alternatives to the end user, make the choice easy to scan
+and understand. Use a numbered or bulleted list by default. Give each option a
+short plain-language name and explain:
+
+- **What it means** in one or two simple sentences.
+- **Why you might choose it** — the strongest reason in its favor.
+- **Main downside** — the most important tradeoff, risk, or limitation.
+
+Do not hide the meaning behind internal IDs, methodology terms, or dense comparison
+tables. Include deeper evidence/technical detail only where it changes the choice.
+
+Always end the alternatives with a clearly labeled **Recommendation**. Recommend
+one option when one stands out, or a small shortlist when the evidence does not
+justify a single choice. If commitment is premature, recommend the most useful
+bounded experiment, defer path, or narrower option instead.
+
+State why you recommend it and what could change that recommendation. The
+recommendation is advisory; the human still decides.
+
 ## Protect human agency and team ownership
 
 Summarize real options, tradeoffs, reversibility, downside and appetite. Reuse a

@@ -61,6 +61,32 @@ opportunities they serve. Consider current/native capabilities and smaller/manua
 interventions. Preserve IDs when refining the same item; never recycle an ID for a
 different claim. Do not require multiple opportunities for a narrow, settled need.
 
+## Present alternatives for a human
+
+Whenever ITP shows alternatives to the end user, optimize for understanding rather
+than completeness. Use a numbered or bulleted list by default. Each alternative
+should have a short plain-language name and explain:
+
+- **What it means:** one or two simple sentences.
+- **Why you might choose it:** the strongest reason in its favor.
+- **Main downside:** the most important tradeoff, risk, or limitation.
+
+Keep internal A/O/C IDs and detailed evidence available for traceability, but do
+not make the user decode them to understand the choice. Avoid dense comparison
+tables as the default first presentation; use one only when the dimensions
+themselves materially help the decision.
+
+After presenting alternatives, always give a clearly labeled **Recommendation**.
+Recommend one alternative when the evidence, constraints and stated preferences
+support it. If no single option is clearly strongest, recommend a small shortlist
+and explain what separates them. If a load-bearing unknown makes commitment
+premature, recommend the bounded experiment, defer path, or narrower alternative
+that is the best next move.
+
+State the reason briefly and name the uncertainty that could change the
+recommendation. A recommendation is advisory evidence for the decision; it never
+becomes the human decision automatically.
+
 ## Evidence and research
 
 Claims C1, C2 distinguish observation, attributed-report, inference, assumption,
