@@ -1,36 +1,70 @@
-# Evidence and limits for v0.5
+# Evidence and limits for v0.6
 
-There are three distinct evidence levels:
+There are several distinct evidence levels; do not collapse them.
 
-- Automated tests exercise the Python helpers, record consistency, standalone
-  resource packaging, evaluation capture/reporting, and failure paths.
-- Worked examples and scripted case inputs illustrate behavior. They are fictional,
-  authored material, not observations of users or agents.
-- Live evaluation requires an actual configured host adapter, retained outputs and
-  attributed review. An adapter's kind/host/model labels are declarations, not
-  authentication, and missing reviews remain unassessed.
+- Automated tests exercise Python helpers, setup conflicts, approval/handoff
+  consistency, standalone skill packaging, status inspection, evaluation
+  capture/reporting, friction observables and failure paths.
+- Worked examples and scripted evaluation cases are authored fixtures, not
+  observations of users or agents.
+- The v0.6 self-use case study describes a real maintainer project change, but it
+  is self-referential and not an independent evaluation.
+- Live evaluation requires an actual configured host adapter, retained outputs
+  and attributed review. Adapter host/model/kind labels are declarations, not
+  authentication.
 
-For this release, no independent live-agent evaluation is claimed. This authoring
-session had no configured model-execution adapter. The harness is exercised with
-explicitly labeled fixture adapters, including failure controls. No model API
-secrets, new paid services or production experiments are required by unit tests.
+## What v0.6 establishes
 
-The npm installer needs network access. Offline package closure tests validate
-copied individual skill directories, but they are not evidence of an npm install
-or a particular host's invocation UX. Python/Git setup tests likewise do not prove
-support for every filesystem or concurrent editing pattern.
+GitHub Actions passed the release/resource checks and 48 unit tests on Python
+3.11, 3.12 and 3.13 for the tested v0.6 branch. The 13-case evaluation suite also
+prepared successfully without invoking a model.
 
-A structurally matching approval/handoff is not authenticated human approval.
-Likewise a green CI run is not proof of good brainstorming, product value,
-evidence credibility, or successful live P2P delivery.
+The checks cover, among other things:
 
-The next evidence to gather is a small real-host capture on the checked-in cases,
-reviewed with explicit excerpts and all incomplete/error cases retained.
+- exact promise/source/receipt drift and unsafe paths;
+- setup conflicts and idempotence;
+- independent standalone skill package closure;
+- evaluation capture failure controls and excerpt-bound reviews;
+- team-ownership/amendment/outcome-review case presence;
+- read-only work-item status inspection;
+- descriptive friction accounting.
 
-## Local release checks
+An initial v0.6 branch run caught an incorrect helper API call in the new work-item
+inspector; the implementation was corrected and the complete matrix passed before
+promotion. This is evidence that the checks can catch at least this class of
+integration error, not evidence that they catch every defect.
 
-The local Python/Git suite passed 43 tests, including fixture capture, deliberate
-negative controls, source/receipt drift, path conflicts and standalone package
-closure. Preparing the 10-case suite succeeded without model execution.
-An actual npm installer smoke attempt failed at DNS resolution for
-registry.npmjs.org (EAI_AGAIN); no npm-install success is claimed.
+## What remains unassessed
+
+No independent live-agent behavioral pass is claimed. This environment still has
+no configured model-execution adapter for the harness. Fixture adapters do not
+count as live model evidence.
+
+A green CI run does not prove:
+
+- good product judgment or brainstorming;
+- evidence/source credibility;
+- real organizational decision authority or approver authenticity;
+- successful customer outcomes;
+- successful P2P delivery;
+- that lower friction metrics imply better discovery.
+
+P2P proof can establish delivered behavior for its exact contract/candidate. It
+does not by itself establish adoption, customer value or the intended real-world
+outcome; v0.6 outcome review keeps that state not-assessed when observations are
+missing.
+
+The npm installer requires network access. A successful online installer smoke
+test has not been re-established for v0.6; standalone package-closure tests are
+not a substitute for that host/network check.
+
+## Next evidence to gather
+
+1. Configure one real supported host adapter and capture the checked-in cases.
+2. Review outputs with exact excerpts, retaining errors/declines.
+3. Compare semantic findings and friction observables on the same case inputs.
+4. Use ITP on several non-self-referential real project decisions.
+5. Feed real post-delivery observations through the new outcome-review path.
+
+Until then, v0.6 should be described as a tested protocol/tooling release with
+live behavioral quality still unassessed.
