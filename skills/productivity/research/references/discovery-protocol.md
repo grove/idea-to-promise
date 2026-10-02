@@ -16,6 +16,91 @@ Discovery can return to framing as well as alternatives and research. It can end
 in pursue, experiment, defer, or reject/no-build. An existing solution is a genuine
 candidate, not a token alternative to discard in favor of new software.
 
+## Conversation ergonomics
+
+The protocol may be rigorous internally; the conversation should feel simple,
+helpful, and forward-moving. The user is collaborating on a decision, not operating
+a workflow engine.
+
+### Lead with meaning, not machinery
+
+User-facing replies should start with the useful conclusion or current situation.
+Do not lead with files read, commands run, protocol sections, structural checker
+output, hashes, record IDs, or internal state labels unless the user asked for
+those details or they are necessary to explain a problem.
+
+Translate internal state into ordinary language:
+
+- prefer "We've already chosen the first-version direction" over "D1 is active";
+- prefer "There is one decision left" over "the work item is blocked";
+- prefer "The promise is drafted; I still need your approval" over
+  "the source-authority gate is unsatisfied";
+- prefer "I checked that the saved promise still matches what was approved" over
+  dumping a digest or "STRUCTURE OK".
+
+Keep C/A/O/D/E IDs, source hashes, paths, receipts, and validation details
+available for traceability, but make them secondary to what the human needs to
+understand or decide.
+
+### Make the next action obvious
+
+At the end of a meaningful turn, the user should know exactly what happens next.
+Prefer one primary next action over a menu of workflow steps.
+
+If a human choice is required, ask one clear question that can be answered in
+normal language. If no choice is required, do the authorized work and then say
+what changed and what comes next.
+
+A useful conversational pattern is:
+
+1. where we are, in plain language;
+2. what I recommend, when a recommendation is useful;
+3. what I need from you, if anything.
+
+Do not force those headings when a shorter natural reply is clearer.
+
+### Resume without re-interviewing
+
+On resume, summarize only the settled context needed to orient the user and then
+continue at the next unanswered question. Do not narrate repository inspection or
+repeat earlier decisions. A good resume message sounds like:
+
+"We've already agreed that v1 should stay small. The remaining choice is whether
+the first artifact is a static index or a full application. I recommend the static
+index because it gives us something useful with much less machinery. Shall we use
+that for v1?"
+
+### Approval is a human conversation
+
+Exact approval remains strict, but the prompt should be inviting. Explain the
+promise in plain language, show the exact wording being approved, and ask one
+direct question such as:
+
+"Are you happy to approve this as the agreed v1 promise?"
+
+Offer a simple revision path. Keep the exact identity and receipt mechanics in the
+background unless the user asks or a mismatch must be diagnosed.
+
+General agreement with a direction is still not approval of later unseen wording.
+
+### Recover from blocked transitions helpfully
+
+When the user tries to move downstream before a required human step is complete,
+do not merely report a gate failure. Explain the missing step in ordinary language
+and help the user complete it immediately.
+
+For example, if `/plan-acceptance` is requested before the exact promise is
+approved, say that the work is one step away, show or summarize the pending exact
+promise, and ask whether to approve or revise it. Do not treat the downstream
+command itself as approval.
+
+### Avoid robotic completion language
+
+Avoid phrases such as "Task complete", "source-authority gate", "artifact
+contract", "handoff pending", and raw "blocked" status in normal user-facing
+prose. They may appear in logs or diagnostic/reference output, but the default
+conversation should explain the situation rather than expose workflow machinery.
+
 ## Depth and budgets
 
 `quick` is for a small, reversible question with adequate context. Use a short

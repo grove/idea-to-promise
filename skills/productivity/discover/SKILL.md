@@ -16,10 +16,41 @@ stages. Default to normal; use quick for a small reversible settled need and dee
 for consequential uncertainty. Respect explicit quick/normal/deep and research
 budgets. Explain a material depth change rather than silently expanding work.
 
+## Make the conversation feel easy
+
+Be rigorous in the records and relaxed in the conversation. The user should not
+have to operate the protocol.
+
+In user-facing replies:
+
+- Lead with the useful conclusion or current situation, not with what files,
+  scripts, tools, or protocol sections you inspected.
+- Explain internal state in ordinary language. Say "we've already chosen the
+  direction" rather than "D1 is active" unless the identifier is genuinely useful.
+- Hide hashes, structural-check output, claim IDs, artifact paths, and receipt
+  mechanics by default. Surface them when the user asks, when exact approval
+  requires seeing the source, or when a mismatch needs explanation.
+- Avoid workflow-engine language such as "task complete", "source-authority gate",
+  "artifact contract", "handoff pending", or "blocked at gate" in normal prose.
+  Translate it into what it means for the user.
+- End with one obvious next step. If a human choice is required, ask one clear
+  question that can be answered naturally.
+- Do not finish with a generic status dump when the user mainly needs to decide or
+  act.
+
+A useful default shape is:
+
+1. **Where we are** — one short paragraph in plain language.
+2. **What I recommend** — when a recommendation is relevant.
+3. **What I need from you** — one clear choice, approval, or next action.
+
+Do not force these headings when a natural shorter answer works better.
+
 ## Start, resume, revisit, amend, or review outcome
 
 For `resume <work item>`, read existing records/session and continue at the next
-unanswered question without repeating settled interviews or choices.
+unanswered question without repeating settled interviews or choices. Tell the user
+what is already settled in plain language, then focus on the one thing that remains.
 
 For `revisit <source>`, compare the original decision/approval with changed
 evidence, needs, constraints and revisit triggers. Preserve the active promise and
@@ -39,7 +70,9 @@ real-world outcome. With no outcome observations record not-assessed. Learning i
 advisory and may trigger revisit/amend/new opportunity; never silently add scope.
 
 For `status <work item>`, use the bundled read-only inspect_work_item.py when
-available. Its next-action output is structural guidance, not product judgment.
+available. Translate its structural output into a short human explanation rather
+than dumping raw status unless requested. Its next-action output is guidance, not
+product judgment.
 
 ## Keep the conversation proportional
 
@@ -111,9 +144,21 @@ separate attributable approval and verify the handoff. General enthusiasm and
 option selection are not approval of exact text. If decision records name a promise
 approver, do not silently substitute another person/role.
 
-Leave a short status: what is settled, what is unknown, the next action and any
-needed human choice. Save session.md only when useful for resume. No timers,
-background monitoring, autonomous controller or automatic P2P execution is implied.
+When approval is the next step, make the prompt inviting. Summarize the promise in
+plain language, show the exact source text that needs approval, and ask a direct
+question such as "Are you happy to approve this as the agreed v1 promise?" Keep the
+hash and receipt mechanics secondary unless the user asks or a mismatch matters.
+
+Before approval, do not present `/plan-acceptance` as the next action. Keep the
+only user-facing call-to-action focused on approving the exact promise or asking
+for a revision. If the user nevertheless tries to move to P2P before approval, do
+not answer with a protocol error. Explain that the work is one step away, show what
+still needs approval, and ask for that approval or revision. Do not treat the
+attempted downstream command as approval by itself.
+
+Leave a short status only when useful: what is settled, what remains, and the next
+human action. Save session.md only when useful for resume. No timers, background
+monitoring, autonomous controller or automatic P2P execution is implied.
 
 For an approved source propose `/plan-acceptance <source>` separately. P2P retains
 its own acceptance and delivery authority. Past delivery/outcome experience is

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added conversation-first ergonomics: user-facing replies now lead with meaning rather than internal workflow machinery, keep IDs/hashes/checker output in the background, and end with one obvious next human action. Resume, decision, and approval flows are explicitly designed to feel collaborative rather than procedural.
+- Improved approval UX: before exact approval, ITP keeps the call-to-action focused on “approve or revise this promise” and does not foreground `/plan-acceptance`; early downstream attempts should be recovered with a helpful one-step-away explanation rather than gate jargon.
 - Standardized user-facing alternatives: whenever ITP presents choices, it now explains each option in plain language using an easy-to-scan list, highlights the strongest reason and main downside, and gives a clearly labeled recommendation or recommended shortlist. Recommendations remain advisory; the human still decides.
 - Reworked onboarding around progressive disclosure: a shorter landing README, a five-minute first-success guide, a simple mental model, a command cheat sheet, and situation-based recipes.
 - Added a documentation home and reference index so everyday users can stay in conversational guidance while advanced protocol, artifact, security, evaluation, and handoff details remain easy to find.

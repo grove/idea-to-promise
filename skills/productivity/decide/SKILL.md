@@ -17,6 +17,24 @@ solution in contention. Explain evidence, uncertainty, preference, reversibility
 cost of being wrong, and appetite in ordinary language. Appetite is what the
 outcome is worth, not an estimate or a promise about delivery time.
 
+## Make choosing feel natural
+
+The user should feel like they are choosing between understandable paths, not
+operating a decision-record format. Lead with the choices and recommendation.
+Keep IDs, posture labels, record paths, and history mechanics in the background
+unless they help the current choice or the user asks for them.
+
+When a choice is still needed, end with one direct question. Prefer:
+
+"Which direction do you want to take?"
+
+or, when the recommendation is strong:
+
+"I recommend option 1. Shall we go with that, choose another option, or investigate
+the remaining uncertainty first?"
+
+Avoid ending with a generic workflow status or several unrelated questions.
+
 ## Present the choices for a human
 
 Whenever you show alternatives to the user, use a numbered or bulleted list by
@@ -43,6 +61,10 @@ Reuse an explicit human choice and appetite already present; do not ask for them
 again without a material reason. Ask only for unresolved decisions. If an unknown
 blocks an unconditional build, explain what it blocks and offer a bounded
 experiment, defer or no-build where applicable.
+
+When the user chooses, acknowledge the choice plainly before discussing any
+record-keeping. "We'll go with the smaller reversible option" is more useful than
+"D1 is now active."
 
 ## Ownership without bureaucracy
 
@@ -74,7 +96,7 @@ These are descriptive categories, not a confidence score or prediction. Preserve
 the underlying evidence; do not mechanically compute an overall rating.
 
 Preserve decision history under the protocol's D-ID/supersession rules. Proposed
-changes never overwrite the active choice. For defer/reject stop with NO PROMISE
-and a revisit trigger. For pursue/experiment suggest `/shape-promise <decision>`;
-`/challenge-decision <decision>` is optional when consequential. Choosing an option
-is not approval of exact promise text or authority to implement.
+changes never overwrite the active choice. For defer/reject explain the stopping
+point naturally and name the revisit trigger. For pursue/experiment, make the next
+step obvious: shape the exact promise. Choosing an option is not approval of exact
+promise text or authority to implement.

@@ -8,6 +8,23 @@ Imagine you are working on a support product and someone says:
 
 That sounds like a solution already. ITP helps you slow down just enough to understand what problem is worth solving, without turning the conversation into a heavyweight workshop.
 
+## What a good ITP conversation should feel like
+
+ITP has quite a lot of rigor underneath, but you should not have to operate that machinery yourself. A good conversation tells you where you are in ordinary language, explains the important choices clearly, recommends a sensible path, and makes the next human action obvious.
+
+For example, after resuming earlier work, a good reply is closer to:
+
+> We’ve already agreed that the first version should stay small. The remaining choice is whether the first artifact should be a simple generated index or a full application. I recommend the generated index because it gives us something useful quickly without committing us to a new runtime. Shall we use that for v1?
+
+It should **not** make you interpret internal IDs, work-item state, hashes, structural-check output, or protocol gates unless those details actually matter to the decision.
+
+The same principle applies to approval. When the promise is ready, ITP should show the readable exact wording and ask a simple question such as:
+
+> **Are you happy to approve this as the agreed v1 promise?**  
+> If not, tell me what you want changed.
+
+Until you approve it, that should be the obvious next action. ITP should not push you toward `/plan-acceptance` yet.
+
 ## 1. Start with the idea you actually have
 
 Use:

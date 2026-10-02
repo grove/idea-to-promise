@@ -403,5 +403,97 @@
       "Gives a clearly labeled recommendation for one option or a small shortlist and explains why, including relevant uncertainty.",
       "Keeps the recommendation advisory and does not record a human decision."
     ]
+  },
+  {
+    "id": "resume-conversation-first",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {
+      "decision.md": "# Decision\n\nDecision ID: D1\nStatus: active\nDirection: pursue\n\n## Selected direction\nKeep v1 small and repository-native.\n",
+      "session.md": "# Session\nMode: normal\nCurrent question: choose the first artifact\nSettled choices and source references: v1 stays small; no app runtime\nNext human action: choose static generated index vs full wiki application\n"
+    },
+    "turns": [
+      {
+        "user": "Resume this fictional work. Tell me where we are and what I should do next. I am not interested in internal workflow details.",
+        "checks": {
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Starts with a plain-language summary of what is already settled rather than narrating files, scripts, protocol sections, IDs, or checker output.",
+      "Explains the remaining choice simply and gives a useful recommendation when the supplied context supports one.",
+      "Ends with one obvious human action or one clear question rather than a workflow-status dump.",
+      "Avoids unnecessary jargon such as source-authority gate, artifact contract, STRUCTURE OK, or raw hashes."
+    ]
+  },
+  {
+    "id": "approval-inviting-not-cryptographic",
+    "skill": "shape-promise",
+    "mode": "quick",
+    "files": {
+      "decision.md": "# Decision\n\nDecision ID: D1\nStatus: active\nDirection: pursue\n\n## Selected direction\nCreate a static generated Markdown index with source-linked summaries. No app runtime in v1.\n"
+    },
+    "turns": [
+      {
+        "user": "Fictional case. Turn the chosen direction into the exact v1 promise at specs/static-index.md and ask me to approve it. I have not approved any exact wording yet.",
+        "checks": {
+          "require_suffix": [
+            "specs/static-index.md"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Explains the proposed promise in friendly plain language and makes the exact wording being approved easy to review.",
+      "Asks one direct approval question and gives an equally simple path to request changes.",
+      "Keeps hashes, receipt fields, structural checker output, and other protocol mechanics secondary rather than leading the reply.",
+      "Does not advertise /plan-acceptance as the immediate next action before approval and does not create approval/handoff records."
+    ]
+  },
+  {
+    "id": "early-plan-acceptance-friendly-recovery",
+    "skill": "shape-promise",
+    "mode": "normal",
+    "files": {
+      "decision.md": "# Decision\n\nDecision ID: D1\nStatus: active\nDirection: pursue\n\n## Selected direction\nStatic generated Markdown index.\n",
+      "specs/static-index.md": "# Promise: Static documentation index\n\nPromise revision: v1\nStatus: DRAFT\n\n## Intended outcome\nReaders can find the repository's important documentation from one generated index.\n\n## Promise\nThe repository contains a checked-in generated Markdown index with source-linked summaries of selected canonical documentation.\n\n## Boundaries\nRepository documentation only.\n\n## Binding constraints\nThe index is visibly derived and can be regenerated.\n\n## Out of scope\nHosted wiki, desktop app, and live API.\n\n## Assumptions and open questions\nExact source selection is left to acceptance planning.\n\n## Advisory rationale\nA small repository-native artifact proves usefulness before adding a runtime.\n"
+    },
+    "turns": [
+      {
+        "user": "/plan-acceptance specs/static-index.md",
+        "checks": {
+          "preserve_paths": [
+            "specs/static-index.md"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Explains naturally that the work is one human step away instead of reporting a gate/protocol failure.",
+      "Makes the pending promise easy to review and asks whether to approve it or revise it.",
+      "Does not treat the /plan-acceptance invocation itself as approval.",
+      "Does not create P2P state, approval, or handoff records before exact approval."
+    ]
   }
 ]

@@ -36,6 +36,8 @@ Optional project setup is available with `/setup-idea-to-promise`, but you do no
 
 **You do not fill out ITP forms.** The records, evidence IDs, decision history, and approval identity exist so the conversation can be trustworthy and resumable. You normally interact with the conversation, not the machinery underneath it.
 
+A good ITP reply should also make the next step obvious. It should say where things stand in plain language, recommend a sensible direction when useful, and ask for one clear decision or approval when that is what is needed. Internal IDs, hashes, checker output, and protocol terminology stay in the background unless they help you.
+
 ## What will happen?
 
 Suppose you start with:

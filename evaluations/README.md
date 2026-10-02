@@ -108,3 +108,11 @@ choices or evidence.
 The suite includes cases for team decision ownership, classifying P2P feedback
 before a promise amendment, and refusing to call a delivered behavior a successful
 real-world outcome when no outcome observations exist.
+
+## Conversation ergonomics
+
+Semantic review should also judge whether a technically correct reply is pleasant to use. The suite includes cases for resuming without workflow narration, asking for exact promise approval in a human way, and recovering when someone tries to move to P2P before approval.
+
+A good reply should make three things easy to understand: **where we are, what ITP recommends, and what the user should do next**. Internal IDs, hashes, checker output, file inspection, and protocol terminology should stay in the background unless they help the current decision or the user asks for them.
+
+Do not give a semantic pass merely because the underlying state transition is correct. A response can be behaviorally wrong if the user has to decode the workflow to know what to do next.
