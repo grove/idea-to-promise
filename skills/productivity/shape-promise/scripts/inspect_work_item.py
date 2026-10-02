@@ -78,7 +78,7 @@ def inspect(work: Path, root: Path, promise: Path | None) -> dict:
         result["promise"] = {
             "path": str(promise.relative_to(root)),
             "revision": field(text, "Promise revision"),
-            "identity": pi.identity(data),
+            "identity": pi.promise_identity(promise),
         }
         if (work / "handoff.md").exists() or (work / "approval.md").exists():
             result["handoff_errors"] = cw.check(
