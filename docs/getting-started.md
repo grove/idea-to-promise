@@ -1,0 +1,141 @@
+# Getting Started in five minutes
+
+The fastest way to understand Idea to Promise is to use it once.
+
+Imagine you are working on a support product and someone says:
+
+> We should add AI summaries to long support tickets.
+
+That sounds like a solution already. ITP helps you slow down just enough to understand what problem is worth solving, without turning the conversation into a heavyweight workshop.
+
+## 1. Start with the idea you actually have
+
+Use:
+
+```text
+/discover We should add AI summaries to long support tickets.
+```
+
+You do not need to prepare a brief first. You do not need to choose a discovery mode, create a folder, fill in a canvas, or know which individual skill comes next.
+
+A good ITP conversation should quickly help clarify the underlying situation. For example, it may discover that support agents are not asking for “summaries” as such. Their real difficulty may be that long threads make it hard to find the customer’s latest unresolved question.
+
+That difference matters because the first solution you thought of may not be the simplest or best way to improve the situation.
+
+## 2. Expect ITP to explore the problem before defending the feature
+
+Once the need is clearer, ITP should consider different ways to improve it. It might compare AI summaries with better thread structure, highlighting the unresolved question, an existing product capability, a smaller manual workflow, or doing nothing if the pain is not important enough.
+
+This is not brainstorming for its own sake. The purpose is to avoid spending research and engineering effort on several cosmetic versions of the same assumption.
+
+You should be able to see the real choices and why they differ.
+
+## 3. Research only what could change the choice
+
+Suppose the AI-summary option depends on a crucial assumption:
+
+> Agents will save meaningful time if the latest unresolved question is summarized automatically.
+
+If that assumption is weakly supported and important to the decision, ITP should investigate it before spending time on lower-impact details. It may suggest existing evidence, direct observation, or a bounded experiment.
+
+If the available evidence already answers the important question, it should **not** perform research merely because a research stage exists.
+
+This is one of the core ideas in ITP: research is there to reduce decision-changing uncertainty, not to make the document look thorough.
+
+## 4. You make the decision
+
+After the useful evidence is on the table, ITP can explain something like:
+
+- A small UI change is simpler and reversible.
+- AI summaries may produce a larger improvement, but the benefit is less certain and the operational complexity is higher.
+- Doing nothing remains reasonable if the current problem is rare enough.
+
+ITP may recommend a direction, but it does not convert that recommendation into your decision.
+
+You might say:
+
+> Let’s choose the smaller UI approach. We only think this outcome is worth one small iteration, and reversibility matters more than maximum capability.
+
+That is the decision.
+
+For a team decision, ITP can also preserve who owns the decision and who is expected to approve the final promise. For a simple individual choice, it should not force you through organizational paperwork.
+
+## 5. Turn the choice into an exact promise
+
+Now the question changes from:
+
+> What should we do?
+
+to:
+
+> What exact outcome are we willing to commit to?
+
+A draft promise might become:
+
+```markdown
+# Promise: Make the current customer question easy to find
+
+## Intended outcome
+Support agents can identify the customer's current unresolved question without
+reading the entire ticket history.
+
+## Promise
+Long support tickets clearly surface the current unresolved customer question.
+
+## Boundaries
+Applies to the existing support-ticket view.
+
+## Out of scope
+Automatic ticket summarization and suggested replies.
+```
+
+The exact wording matters. Choosing the direction earlier does **not** mean you have approved this text.
+
+ITP saves the proposed source, shows you the exact wording, and only records approval after you explicitly approve those exact bytes. That protects the agreement from silently changing later.
+
+You normally do not need to think about the hash mechanics yourself. The useful mental model is simply:
+
+> **ITP remembers exactly which promise you approved.**
+
+## 6. Hand the promise to Promise to Proof
+
+Once the source is approved, ITP stops before implementation.
+
+The next command is:
+
+```text
+/plan-acceptance specs/current-question.md
+```
+
+Promise to Proof now takes responsibility for defining precise acceptance, implementing against that contract, reviewing the implementation, and proving the promised behavior.
+
+That separation is deliberate:
+
+```text
+Idea to Promise: What should we promise?
+Promise to Proof: Did we actually keep that promise?
+```
+
+## What if the answer is “don’t build it”?
+
+That is a successful ITP outcome too.
+
+For example, research may show that the product already has a feature that solves the need. Or the human may decide the problem is not worth the complexity. In those cases ITP should record the decision and stop rather than manufacturing a build promise just to keep the workflow moving.
+
+Likewise, you can end with a bounded experiment if you are not ready to promise a solution yet.
+
+## You usually only need `/discover`
+
+The individual skills—`/frame`, `/brainstorm`, `/research`, `/decide`, `/challenge-decision`, and `/shape-promise`—are useful when you want to work directly on one stage. They are not a checklist you need to run manually every time.
+
+For everyday use, remember:
+
+```text
+/discover <your idea>
+```
+
+Then talk normally.
+
+## Where next?
+
+Read **[The mental model](mental-model.md)** to understand the five concepts that make ITP work, or jump straight to the **[recipe book](recipes/README.md)** for the situation you are facing today.

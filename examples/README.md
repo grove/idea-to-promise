@@ -1,5 +1,7 @@
 # Worked discovery examples
 
+New to ITP? Read the [5-minute Getting Started guide](../docs/getting-started.md) first. These examples are useful once you want to see how different discovery outcomes look in more detail.
+
 Every example is fictional authored teaching material—not a live-agent test,
 customer observation, experiment result or real human approval.
 

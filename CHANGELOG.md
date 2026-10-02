@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Reworked onboarding around progressive disclosure: a shorter landing README, a five-minute first-success guide, a simple mental model, a command cheat sheet, and situation-based recipes.
+- Added a documentation home and reference index so everyday users can stay in conversational guidance while advanced protocol, artifact, security, evaluation, and handoff details remain easy to find.
+- Added documentation regression checks for the new-user path and kept worked examples explicitly downstream of Getting Started.
+
 ## 0.6.0
 
 - Added a first-class feedback loop: `/discover amend` classifies P2P/later
