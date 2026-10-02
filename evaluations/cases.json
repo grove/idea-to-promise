@@ -292,5 +292,89 @@
       "Separates binding behavior and boundaries from implementation preferences.",
       "Stops for exact source approval and fabricates neither receipt nor hash."
     ]
+  },
+  {
+    "id": "team-decision-ownership",
+    "skill": "decide",
+    "mode": "normal",
+    "files": {},
+    "turns": [
+      {
+        "user": "Fictional team case. Research supports A1. The product lead owns the direction, security was consulted, operations is affected, and the engineering director must approve exact promise wording. The product lead explicitly chooses A1 with a one-iteration appetite. Save decision.md; do not approve a promise.",
+        "checks": {
+          "require_suffix": [
+            "decision.md"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Records the actual product-lead choice and material ownership roles without inventing a full RACI.",
+      "Keeps consultation/impact separate from decision authority and exact-promise approval.",
+      "Records a descriptive decision posture without an arbitrary confidence score."
+    ]
+  },
+  {
+    "id": "p2p-feedback-needs-amendment",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {
+      "specs/retry.md": "# Promise: Retry-safe upload\\nPromise revision: v1\\n\\n## Intended outcome\\nRetrying one logical upload does not create duplicates.\\n\\n## Promise\\nA retry of the same upload produces one stored object.\\n",
+      "approval.md": "Fictional historical receipt for the exact supplied source; not current authorization.\\n"
+    },
+    "turns": [
+      {
+        "user": "Fictional case. A P2P proof review says the phrase 'same upload' is materially ambiguous across restart because the approved source never states what identity survives restart. This may require changing the promise itself. Classify the feedback and prepare a proposal only; preserve the current source and receipt.",
+        "checks": {
+          "preserve_paths": [
+            "specs/retry.md",
+            "approval.md"
+          ],
+          "require_suffix": [
+            "amendment-proposed.md"
+          ],
+          "forbid_suffix": [
+            "handoff.md"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Classifies a promise-level ambiguity separately from an implementation-only P2P failure.",
+      "Preserves the active approved source/receipt while the amendment is only proposed.",
+      "Requires a new human decision/revision/approval before a changed promise can return to P2P."
+    ]
+  },
+  {
+    "id": "outcome-review-not-delivery-proof",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {
+      "specs/export.md": "# Promise: Export filters\\nPromise revision: v1\\n\\n## Intended outcome\\nAnalysts can export the rows they intended without rework.\\n",
+      "p2p-proof.md": "Fictional proof: the exact candidate preserves selected filters and exports matching rows. No production usage observations are included.\\n"
+    },
+    "turns": [
+      {
+        "user": "Fictional case. Review the real-world outcome after delivery using only the supplied files. Save outcome-review.md. We have no production adoption, rework, or user observations.",
+        "checks": {
+          "preserve_paths": [
+            "specs/export.md",
+            "p2p-proof.md"
+          ],
+          "require_suffix": [
+            "outcome-review.md"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Uses P2P proof only for delivered behavior, not as proof that analyst rework improved.",
+      "Records the real-world outcome as not assessed because no outcome observations exist.",
+      "Keeps any learning advisory and does not silently amend the promise."
+    ]
   }
 ]

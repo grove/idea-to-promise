@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.6.0
+
+- Added a first-class feedback loop: `/discover amend` classifies P2P/later
+  evidence before any promise change, while `/discover outcome` separates proven
+  delivery from observed real-world outcome.
+- Added amendment and outcome-review records; active approved promises remain
+  intact while replacements are pending.
+- Added lightweight team decision ownership and exact-promise approval roles,
+  without requiring organizational ceremony for solo work.
+- Added non-numeric decision posture: evidence, important unknowns, reversibility,
+  downside if wrong and appetite fit.
+- Strengthened the untrusted-source boundary against embedded instructions in
+  webpages, issues, documents, repository text, attachments and tool output.
+- Added a read-only deterministic work-item inspector and release consistency
+  checker.
+- Evaluation captures now report descriptive friction observables separately from
+  semantic quality; added regression cases for ownership, amendments and outcome
+  review.
+- Added an explicitly non-independent maintainer self-use case study.
+- Independent live-agent evaluation remains unassessed until a real host adapter
+  is configured and reviewed.
+
 ## 0.5.0
 
 - Adaptive quick/normal/deep discovery, compact notebooks, explicit budgets,
@@ -10,10 +32,9 @@
 - Six fictional end-to-end examples and a multi-turn evaluation kit with virtual
   captures, exact snapshots, separate human judgments and explicit incomplete states.
 - Self-contained skill packages with synchronized protocol/templates/helpers.
-- Handoff checker now verifies matching source paths and referenced approval
-  records; duplicate/empty fields, drift, unsafe paths and unreadable inputs fail.
-- Regression tests and CI cover fixtures and failure controls without claiming
-  independent live-agent quality. No autonomous controller or P2P change.
+- Handoff checker verifies matching source paths and referenced approval records.
+- Regression tests and CI cover fixtures/failure controls without claiming
+  independent live-agent quality.
 
 ## 0.4.0
 

@@ -1,4 +1,4 @@
-# Records in v0.5
+# Records in v0.6
 
 Use the smallest durable record that preserves the decision. Quick discovery may
 use `.itp/work/<slug>/discovery.md` with Need, Options, Evidence and unknowns,
@@ -59,3 +59,41 @@ approval. Legacy table claim IDs are still inspected alongside compact C-ID line
 
 These checks establish structural consistency only, not source credibility,
 approver authenticity, complete Markdown semantics or implementation readiness.
+
+
+## Team ownership and decision posture
+
+For shared decisions, decision.md may record Decision owner, Consulted, Affected
+and Promise approver. These fields are optional when irrelevant. They do not prove
+organizational authority; they preserve what the human process actually established.
+
+Decision posture records Evidence, Important unknowns, Reversibility, Downside if
+wrong and Appetite fit. These are descriptive categories with reasons, never an
+overall numeric confidence score.
+
+## Amendments
+
+A pending material change lives in `amendment-proposed.md`. It records the
+current source/revision/identity, trigger provenance, classification, proposed
+binding change, unchanged commitments and decision impact. The active approved
+source and receipt remain unchanged until replacement bytes receive exact approval.
+
+An implementation-only P2P problem does not require an amendment record. A material
+replacement gets a new promise revision and fresh P2P acceptance-planning handoff.
+
+## Outcome reviews
+
+`outcome-review.md` binds an approved source identity to delivery evidence and
+real-world observations. It records observation context, delivered behavior,
+actual outcome observations, counterevidence, assumption updates, advisory learning
+and decision impact.
+
+Allowed outcome states are improved, mixed, no-improvement and not-assessed.
+Without direct/attributed outcome observations, use not-assessed even when P2P proof
+is green. Outcome review never mutates the approved promise.
+
+## Structural status
+
+`scripts/inspect_work_item.py` reads records and optional source identity to show
+structural state and a likely next action. It is read-only. Its output is not a
+decision, approval, readiness verdict or execution plan.

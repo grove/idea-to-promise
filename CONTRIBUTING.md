@@ -7,6 +7,7 @@ Edit canonical resources, run `python3 scripts/sync_skill_resources.py`, then:
 
 ```bash
 python3 scripts/sync_skill_resources.py --check
+python3 scripts/release_check.py
 python3 -m unittest discover -s checks -p 'test_*.py' -v
 python3 scripts/evaluate.py prepare --out .itp/evals/local-prepare
 ```

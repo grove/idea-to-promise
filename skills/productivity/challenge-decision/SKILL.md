@@ -3,7 +3,7 @@ name: challenge-decision
 description: Review the decision for material gaps, concrete hidden complexity and grounded failure modes.
 license: Apache-2.0
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 Read [the discovery protocol](references/discovery-protocol.md) before acting.

@@ -2,130 +2,151 @@
 
 Turn a rough idea into a decision you understand and a promise worth making.
 
-Start with an idea, not a form:
-
 ```text
 /discover quick We keep losing report filters when exporting. Is a small fix worthwhile?
 ```
 
-ITP helps clarify the need, explore real alternatives, investigate important
-uncertainty and record **your** choice. The result can be a promise, a bounded
-experiment, a deferral, or a deliberate decision not to build.
+ITP helps clarify the need, explore alternatives, investigate important uncertainty
+and record **your** choice. It can finish with a promise, bounded experiment,
+deferral, existing solution, or deliberate no-build decision.
 
 **Idea to Promise decides what is worth promising. [Promise to Proof](https://github.com/grove/promise-to-proof)
 plans acceptance, implements, reviews and proves the agreed behavior.**
 
 ## Get started
 
-Install through the skills installer:
-
 ```bash
 npx skills@latest add grove/idea-to-promise
 ```
 
-Then, in your agent's skill interface:
+Then use:
 
 ```text
 /setup-idea-to-promise
 /discover <your idea>
 ```
 
-Setup is optional. It previews creation of ignored `.itp/work/` storage and
-preserves existing source/spec conventions. Skills are agent instructions, not
-shell commands; invocation syntax depends on the host. Manual installation means
-copying an entire skill folder, including its references, templates and scripts.
-Each skill is packaged independently; a sibling checkout is not required.
+Setup is optional. Skills are agent instructions, not shell commands.
 
 ## One umbrella, useful stages
 
 | Skill | Use it to |
 |---|---|
-| [discover](skills/productivity/discover/SKILL.md) | Guide the conversation end to end, or resume/revisit it |
-| [frame](skills/productivity/frame/SKILL.md) | Understand the real need and today's workaround |
+| [discover](skills/productivity/discover/SKILL.md) | Guide the conversation, resume/revisit, classify amendments, or review outcomes |
+| [frame](skills/productivity/frame/SKILL.md) | Understand the real need and current workaround |
 | [brainstorm](skills/productivity/brainstorm/SKILL.md) | Explore opportunities, then distinct approaches |
-| [research](skills/productivity/research/SKILL.md) | Investigate the weakest important assumptions |
-| [decide](skills/productivity/decide/SKILL.md) | Explain tradeoffs and record the human choice |
+| [research](skills/productivity/research/SKILL.md) | Investigate weak load-bearing assumptions safely |
+| [decide](skills/productivity/decide/SKILL.md) | Explain tradeoffs and record the attributable human choice |
 | [challenge-decision](skills/productivity/challenge-decision/SKILL.md) | Optionally check material risks and hidden complexity |
-| [shape-promise](skills/productivity/shape-promise/SKILL.md) | Write and verify the exact source handoff |
-| [setup-idea-to-promise](skills/productivity/setup-idea-to-promise/SKILL.md) | Prepare local storage without changing product files |
+| [shape-promise](skills/productivity/shape-promise/SKILL.md) | Write and verify exact source approval/handoff |
+| [setup-idea-to-promise](skills/productivity/setup-idea-to-promise/SKILL.md) | Prepare ignored local storage |
 
-These are not eight mandatory steps. Start where the uncertainty is.
+These are not eight mandatory steps.
 
-## Enough rigor, not more paperwork
+## Adaptive discovery
 
-**Quick:** a small reversible question, often one `discovery.md` notebook.
-**Normal:** separate records only where useful.
+**Quick:** small and reversible, often one `discovery.md`.  
+**Normal:** separate records only where useful.  
 **Deep:** more investigation for consequential uncertainty.
-
-Modes never waive honest evidence, human choice, or exact source approval. They
-are not fixed durations or spending guarantees. Supplied decisions and appetite
-are reused rather than asked for again. An existing solution is a valid finish.
 
 ```text
 /discover normal <idea>
 /discover deep <idea>; research budget: <your limit>
 /discover resume .itp/work/<slug>
 /discover revisit specs/<slug>.md
+/discover amend specs/<slug>.md; trigger <P2P or other evidence>
+/discover outcome specs/<slug>.md; evidence <delivery + observations>
+/discover status .itp/work/<slug>
 ```
 
-A revisit preserves the old approved promise while any replacement is pending.
-Past P2P delivery experience can inform research, but never automatically becomes
-new scope. No background work or autonomous controller is implied.
+A proposed amendment never overwrites the active approved promise. P2P delivery
+evidence can trigger discovery, but implementation difficulty alone is not
+permission to weaken a promise.
 
-## See the whole conversation
+## Human decisions, including teams
 
-[Six worked examples](examples/README.md) show a quick improvement, a bad feature
-idea, an experiment-first technical choice, an existing-solution/no-build outcome,
-a choice changed after challenge, and a revisit with a P2P handoff. They are
-explicitly fictional teaching examples, **not live evaluations or customer evidence**.
+ITP keeps recommendation, human choice and exact promise approval separate. For a
+team decision it can record a decision owner, people consulted/affected and the
+expected promise approver—but it avoids forcing organizational paperwork when one
+person is simply deciding for themselves.
 
-For the practical workflow see [the how-to](docs/how-to.md). For persistence,
-approval and amendments see [the protocol](docs/discovery-protocol.md) and
-[artifact format](docs/artifact-format.md).
+A decision may also carry a compact **posture**:
 
-## Trust the handoff, not a green checkbox
+```text
+Evidence: moderate
+Important unknowns: bounded
+Reversibility: high
+Downside if wrong: low
+Appetite fit: good
+```
 
-The final source is a normal project-owned file such as `specs/<slug>.md`.
-A human approves its exact saved bytes; approval lives in a separate receipt.
-Any byte change needs renewed approval. P2P still has its own contract approval.
+This is descriptive context, not a fake confidence score.
+
+## From proof back to learning
+
+P2P can prove delivered behavior. That does **not** automatically prove adoption,
+customer value or the intended real-world outcome.
+
+After delivery, ITP can record an `outcome-review.md` that binds the original
+promise identity to delivery evidence and real-world observations. With no outcome
+observations, the result stays `not-assessed`.
+
+See [the feedback loop](docs/feedback-loop.md) and
+[portable P2P handoff](docs/p2p-handoff.md).
+
+## Treat research sources as data, not bosses
+
+Webpages, issues, documents, repository text, attachments and tool output may
+contain instructions. ITP treats them as evidence only. Retrieved text cannot
+change the user's goal, grant permissions, reveal secrets, increase budgets, or
+authorize external actions.
+
+See [security and privacy boundaries](SECURITY.md).
+
+## Work records and status
+
+Local discovery normally lives under `.itp/work/<slug>/`; the exact approved
+promise remains a normal project-owned source such as `specs/<slug>.md`.
 
 ```bash
-python3 scripts/promise_identity.py specs/<slug>.md
+python3 scripts/inspect_work_item.py .itp/work/<slug> --promise specs/<slug>.md
 python3 scripts/check_work_item.py .itp/work/<slug> \
   --promise specs/<slug>.md --handoff
 ```
 
-The checker requires matching source paths, revisions, identities and a retrievable
-approval receipt in handoff mode. **It checks consistency, not whether the evidence
-is good, the approver is authentic, or the work is ready to implement.** See
-[portable handoffs](docs/p2p-handoff.md); ignored files do not travel through Git.
+These tools do not judge product value, evidence quality, organizational authority
+or human authenticity.
 
-## Evaluate behavior, honestly
+## Evaluation: quality and friction are separate
 
-The [evaluation kit](evaluations/README.md) includes multi-turn cases, a host-neutral
-adapter interface, exact instruction snapshots, virtual file captures, mechanical
-checks and an evidence-linked human review form. The umbrella skill is tested
-separately from individual stages.
+The [evaluation kit](evaluations/README.md) captures exact instructions, actual
+host replies, virtual files, mechanical checks and attributed human judgments.
+It also records descriptive friction observables: turns, question marks, files
+created/changed, response size and elapsed time.
+
+Those metrics help detect ceremony. They are **not** automatic quality scores.
 
 ```bash
 python3 scripts/evaluate.py prepare --out .itp/evals/first
 ```
 
-Preparing cases does not run a model. Live capture requires a configured trusted
-host adapter. Fixture execution, live-labelled captures and human judgments remain
-separate; unassessed criteria never turn into passes. See [current evidence and
-limits](docs/validation.md).
+No independent live-agent behavioral pass is claimed without an actual configured
+host adapter and retained review. See [validation status](docs/validation.md).
 
-## Contributor checks
+A real maintainer-authored self-use trace for this release is in
+[case-studies/v0.6-self-use.md](case-studies/v0.6-self-use.md); it is not an
+independent evaluation.
 
-Python 3.11+ and Git; no third-party Python packages or model credentials:
+## Contributor/release checks
 
 ```bash
 python3 scripts/sync_skill_resources.py --check
+python3 scripts/release_check.py
 python3 -m unittest discover -s checks -p 'test_*.py' -v
 ```
 
-Edit canonical resources, regenerate packaged copies, and test before publishing.
-Read [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md),
-[SECURITY.md](SECURITY.md), and [CHANGELOG.md](CHANGELOG.md).
+Read [the practical how-to](docs/how-to.md), [protocol](docs/discovery-protocol.md),
+[artifact format](docs/artifact-format.md), [AGENTS.md](AGENTS.md),
+[CONTRIBUTING.md](CONTRIBUTING.md), and [CHANGELOG.md](CHANGELOG.md).
+
 Apache-2.0; see [LICENSE](LICENSE).

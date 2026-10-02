@@ -93,6 +93,35 @@ def mechanical(files, rules, before=None):
     return results
 
 
+def friction(turns):
+    """Observable interaction cost only; not a quality score."""
+    result = {'turns': len(turns), 'reply_chars': 0, 'question_marks': 0,
+              'files_created': 0, 'files_changed': 0, 'seconds': 0.0}
+    for turn in turns:
+        reply = turn['response']['reply']
+        before = turn['request'].get('files', {})
+        after = turn['response'].get('files', {})
+        result['reply_chars'] += len(reply)
+        result['question_marks'] += reply.count('?')
+        result['files_created'] += sum(name not in before for name in after)
+        result['files_changed'] += sum(name in before and before[name] != value
+                                       for name, value in after.items())
+        result['seconds'] += float(turn.get('seconds', 0.0))
+    result['seconds'] = round(result['seconds'], 3)
+    return result
+
+
+def aggregate_friction(items):
+    keys = ('turns', 'reply_chars', 'question_marks', 'files_created', 'files_changed', 'seconds')
+    result = {key: 0 for key in keys}
+    for item in items:
+        values = item.get('friction', {})
+        for key in keys:
+            result[key] += values.get(key, 0)
+    result['seconds'] = round(result['seconds'], 3)
+    return result
+
+
 def invoke(command, request, timeout):
     # Spool rather than retaining unbounded stdout in memory. Host commands must
     # themselves enforce resource/network limits. stderr is deliberately not retained.
@@ -159,8 +188,10 @@ def execute(selected, output: Path, command, kind: str, host: str, model: str, t
                 item['status'], item['error'] = 'error', str(exc)
                 failed = True
                 break
+        item['friction'] = friction(item['turns'])
         manifest['cases'].append(item)
         save(output / 'run.json', manifest)
+    manifest['friction'] = aggregate_friction(manifest['cases'])
     manifest['status'] = 'prepared' if command is None else 'captured'
     save(output / 'run.json', manifest)
     review = {'run_sha256': digest((output / 'run.json').read_bytes()), 'reviewer': '',
@@ -207,6 +238,10 @@ def report(run_path: Path, review_path: Path | None):
     pending = sum(verdicts.get(key, 'not-assessed') == 'not-assessed' for key in expected)
     status = 'FAIL' if failed else 'INCOMPLETE' if pending else 'REVIEWED PASS'
     print(f'{status}; kind={run["kind"]}; unassessed criteria={pending}/{len(expected)}')
+    f = run.get('friction') or aggregate_friction(run['cases'])
+    print('Friction observables: ' + ', '.join(f'{key}={f[key]}' for key in
+          ('turns', 'question_marks', 'files_created', 'files_changed', 'reply_chars', 'seconds')))
+    print('Friction observables are descriptive, not a quality score or automatic failure threshold.')
     print('Fixture results are not live-agent evidence. Review judgments are attributed, not independent proof.')
     return 1 if failed else 3 if pending else 0
 

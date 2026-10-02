@@ -11,9 +11,9 @@ TEMPLATES = {
     'research': ('research', 'experiment', 'discovery'),
     'decide': ('decision', 'discovery'),
     'challenge-decision': ('challenge',),
-    'shape-promise': ('promise', 'approval', 'handoff'),
+    'shape-promise': ('promise', 'approval', 'handoff', 'amendment'),
     'discover': ('discovery', 'session', 'frame', 'alternatives', 'research', 'experiment',
-                 'decision', 'challenge', 'promise', 'approval', 'handoff'),
+                 'decision', 'challenge', 'promise', 'approval', 'handoff', 'amendment', 'outcome-review'),
     'setup-idea-to-promise': (),
 }
 
@@ -26,7 +26,7 @@ def mapping(root=ROOT):
         pairs.append((root / 'LICENSE', base / 'LICENSE'))
         pairs.extend((root / f'templates/{n}.md', base / f'templates/{n}.md') for n in names)
         scripts = ('setup_project',) if skill == 'setup-idea-to-promise' else (
-            ('check_work_item', 'promise_identity') if skill in ('discover', 'shape-promise') else ())
+            ('check_work_item', 'promise_identity', 'inspect_work_item') if skill in ('discover', 'shape-promise') else ())
         pairs.extend((root / f'scripts/{n}.py', base / f'scripts/{n}.py') for n in scripts)
     return pairs
 

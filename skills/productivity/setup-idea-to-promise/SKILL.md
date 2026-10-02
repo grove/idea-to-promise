@@ -3,7 +3,7 @@ name: setup-idea-to-promise
 description: Set up ignored local discovery storage without overwriting project conventions or creating specs.
 license: Apache-2.0
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 Read [the discovery protocol](references/discovery-protocol.md) before acting.

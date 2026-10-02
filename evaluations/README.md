@@ -82,3 +82,29 @@ as regression cases, including no-build and negative controls.
 
 This release ships the infrastructure and fixture validation. No independent
 live-agent behavioral pass is claimed; see [validation status](../docs/validation.md).
+
+
+## Friction observables
+
+Captured runs also report descriptive interaction cost:
+
+- assistant turns,
+- question marks in replies,
+- virtual files created,
+- virtual files changed,
+- total reply characters,
+- elapsed adapter time.
+
+These values help identify needless interviewing, document churn, and verbosity.
+They are not semantic quality measures and have no automatic pass/fail threshold.
+A difficult decision can legitimately need more interaction than a quick case.
+
+Compare friction only alongside the same case inputs, behavioral review, and
+host/model context. Do not optimize question counts by skipping load-bearing human
+choices or evidence.
+
+## Feedback-loop cases
+
+The suite includes cases for team decision ownership, classifying P2P feedback
+before a promise amendment, and refusing to call a delivered behavior a successful
+real-world outcome when no outcome observations exist.
