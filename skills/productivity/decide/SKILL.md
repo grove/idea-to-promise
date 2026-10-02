@@ -19,8 +19,8 @@ outcome is worth, not an estimate or a promise about delivery time.
 
 ## Present the choices for a human
 
-Whenever you show alternatives to the user, use an easy-to-scan numbered or
-bulleted list by default. For each option provide:
+Whenever you show alternatives to the user, use a numbered or bulleted list by
+default so the choices are easy to scan. For each option provide:
 
 - **What it means:** a short explanation in ordinary language.
 - **Why you might choose it:** its strongest advantage for this decision.
