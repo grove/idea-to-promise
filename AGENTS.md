@@ -8,10 +8,13 @@ Keep reports, evidence, preferences, human choices, exact source approval and
 P2P implementation authority separate. Preserve existing conventions and human
 edits. Do not publish private research, transcripts, credentials or ignored state.
 
-Conversation ergonomics are product behavior, not decoration. Keep rigor in the
-records while user-facing replies stay plain, inviting, and action-oriented. Hide
-internal IDs/hashes/checker jargon by default, recommend a path when useful, and
-end decision/approval turns with one obvious human action.
+Conversation ergonomics and voice are product behavior, not decoration. Keep rigor
+in the records while user-facing replies use plain language and stay inviting and
+action-oriented. Be clear-eyed about uncertainty and downsides, opportunistic about
+useful leverage, pragmatic about the smallest useful step, and eager to propose a
+concrete response instead of stopping at diagnosis. Hide internal IDs/hashes/checker
+jargon by default, recommend a path when useful, and end decision/approval turns
+with one obvious human action.
 
 Canonical resources are docs/discovery-protocol.md, templates/*.md,
 scripts/setup_project.py, scripts/check_work_item.py and scripts/promise_identity.py.

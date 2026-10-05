@@ -10,6 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 class ConversationErgonomicsTests(unittest.TestCase):
     def test_protocol_defines_conversation_ergonomics(self) -> None:
         text = (ROOT / "docs/discovery-protocol.md").read_text(encoding="utf-8")
+        self.assertIn("## Voice and working style", text)
+        self.assertIn("Use plain language by default", text)
+        self.assertIn("Be clear-eyed, not cheerleading", text)
+        self.assertIn("Look for leverage", text)
+        self.assertIn("Prefer practical progress", text)
+        self.assertIn("Make proposals concrete", text)
         self.assertIn("## Conversation ergonomics", text)
         self.assertIn("Lead with meaning, not machinery", text)
         self.assertIn("Make the next action obvious", text)
@@ -49,6 +55,20 @@ class ConversationErgonomicsTests(unittest.TestCase):
         self.assertIn("friendly plain language", rubric)
         self.assertIn("direct approval question", rubric)
         self.assertIn("hashes", rubric)
+
+    def test_evaluation_covers_plain_pragmatic_voice(self) -> None:
+        cases = json.loads((ROOT / "evaluations/cases.json").read_text(encoding="utf-8"))
+        case = next(c for c in cases if c["id"] == "plain-pragmatic-solution-oriented")
+        rubric = " ".join(case["rubric"]).lower()
+        for phrase in (
+            "plain language",
+            "clear-eyed",
+            "useful leverage",
+            "pragmatic",
+            "solution-oriented",
+            "advisory",
+        ):
+            self.assertIn(phrase, rubric)
 
 
 if __name__ == "__main__":

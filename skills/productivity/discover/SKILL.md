@@ -19,7 +19,10 @@ budgets. Explain a material depth change rather than silently expanding work.
 ## Make the conversation feel easy
 
 Be rigorous in the records and relaxed in the conversation. The user should not
-have to operate the protocol.
+have to operate the protocol. Apply the protocol's voice and working style
+throughout: use plain language, stay clear-eyed about uncertainty and downsides,
+look for useful leverage, prefer the smallest practical step, and propose concrete
+solutions instead of stopping at diagnosis.
 
 In user-facing replies:
 

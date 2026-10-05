@@ -495,5 +495,33 @@
       "Does not treat the /plan-acceptance invocation itself as approval.",
       "Does not create P2P state, approval, or handoff records before exact approval."
     ]
+  },
+  {
+    "id": "plain-pragmatic-solution-oriented",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {},
+    "turns": [
+      {
+        "user": "Fictional case. New contributors lose time because our documentation is hard to navigate. We already have a README and docs folder. Someone suggested building a documentation portal, but we do not yet know that a new system is necessary. Give me a clear-eyed, practical recommendation in plain language. Look for useful leverage in what already exists, propose a concrete next move, and tell me the main downside or uncertainty. Do not make the decision for me.",
+        "checks": {
+          "forbid_suffix": [
+            "decision.md",
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Uses plain language and leads with an understandable recommendation or diagnosis rather than methodology jargon or internal IDs.",
+      "Is clear-eyed about what is known, what is uncertain, and the main downside instead of overselling the portal or any other solution.",
+      "Looks opportunistically for useful leverage in the existing README/docs capabilities and seriously considers a smaller or reversible path before new infrastructure.",
+      "Is pragmatic and solution-oriented: proposes a concrete next step that can create value or learning instead of stopping at analysis.",
+      "Keeps the recommendation advisory and leaves the human decision open."
+    ]
   }
 ]
