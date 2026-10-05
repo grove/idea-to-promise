@@ -48,3 +48,12 @@ A recommendation is advisory. It is never the human decision.
 Save Options in the quick notebook or alternatives.md. Preserve prior IDs and
 human edits. Recommend `/research <alternatives>` for consequential uncertainty;
 otherwise `/decide <context>`. A leading option is not a human choice.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+
