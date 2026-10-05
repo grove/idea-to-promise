@@ -93,3 +93,12 @@ helps diagnose a problem.
 For another checkout transfer source and approval evidence together; ignored local
 paths are not portable. Source approval grants no implementation, commit,
 publication or merge authority.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+
