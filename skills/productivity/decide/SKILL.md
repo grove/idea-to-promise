@@ -100,3 +100,12 @@ changes never overwrite the active choice. For defer/reject explain the stopping
 point naturally and name the revisit trigger. For pursue/experiment, make the next
 step obvious: shape the exact promise. Choosing an option is not approval of exact
 promise text or authority to implement.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+
