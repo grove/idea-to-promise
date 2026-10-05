@@ -29,3 +29,12 @@ Save challenge.md only when useful. Record review context and CLEAR/FINDINGS/
 INSUFFICIENT EVIDENCE, applicable input identities, and next check or decision
 amendment. Findings are advisory; the human still chooses. A clean, short review
 is valid. Do not approve the promise or start another stage automatically.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+
