@@ -166,3 +166,12 @@ monitoring, autonomous controller or automatic P2P execution is implied.
 For an approved source propose `/plan-acceptance <source>` separately. P2P retains
 its own acceptance and delivery authority. Past delivery/outcome experience is
 advisory evidence, never an automatic requirement.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+
