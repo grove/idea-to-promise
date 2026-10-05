@@ -11,6 +11,7 @@ TEMPLATES = {
     'research': ('research', 'experiment', 'discovery'),
     'decide': ('decision', 'discovery'),
     'challenge-decision': ('challenge',),
+    'compound-learning': (),
     'shape-promise': ('promise', 'approval', 'handoff', 'amendment'),
     'discover': ('discovery', 'session', 'frame', 'alternatives', 'research', 'experiment',
                  'decision', 'challenge', 'promise', 'approval', 'handoff', 'amendment', 'outcome-review'),

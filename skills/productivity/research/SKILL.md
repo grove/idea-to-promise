@@ -52,3 +52,12 @@ simple numbered/bulleted list and give a clearly labeled recommendation or
 recommended shortlist with a short reason. The recommendation remains advisory.
 Do not create an active decision or unconditional promise on the human's behalf.
 An unknown that blocks a build can still justify a bounded experiment or deferral.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+

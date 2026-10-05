@@ -25,3 +25,12 @@ only when useful. Surface which question would change the next step. Normally
 hand off to `/brainstorm <frame>`; focused research or an already clear decision
 may be more useful. New evidence can return here without erasing earlier context.
 Do not choose a solution, approve a promise, or start implementation.
+
+## Compound durable learning
+
+If this work surfaces a durable, non-obvious lesson likely to help future ITP work,
+invoke the `compound-learning` skill before finishing. Do not invoke it for routine
+facts, one-off details, already-recorded evidence, or merely because the work was
+difficult. Compounding is advisory: it must not create or replace a human decision,
+change an approved promise, add scope, or silently rewrite shared ITP behavior.
+

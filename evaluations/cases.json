@@ -523,5 +523,63 @@
       "Is pragmatic and solution-oriented: proposes a concrete next step that can create value or learning instead of stopping at analysis.",
       "Keeps the recommendation advisory and leaves the human decision open."
     ]
+  },
+  {
+    "id": "compound-project-learning",
+    "skill": "compound-learning",
+    "mode": "normal",
+    "files": {
+      ".itp/work/support/decision.md": "# Decision\\n\\nDecision ID: D1\\nStatus: active\\nDirection: pursue\\n",
+      "specs/support.md": "# Promise: Support triage\\n\\n## Promise\\nSupport agents can identify the current unresolved customer question.\\n"
+    },
+    "turns": [
+      {
+        "user": "Fictional case. Across three support-workflow investigations we observed the same thing: long tickets are less of a problem than losing track of the customer's current unresolved question. Capture this as reusable project learning for future ITP discovery. Do not change the active decision, approved source, or shared ITP skills.",
+        "checks": {
+          "preserve_paths": [
+            ".itp/work/support/decision.md",
+            "specs/support.md"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Applies a meaningful reuse/materiality test instead of treating every supplied fact as permanent memory.",
+      "Captures or proposes the insight as advisory project learning with applicability and provenance, preferably under .itp/learnings when writable.",
+      "Preserves the active decision and source promise and does not turn the learning into approval, new scope, or a silent shared-skill change."
+    ]
+  },
+  {
+    "id": "compound-shared-behavior-proposal",
+    "skill": "compound-learning",
+    "mode": "normal",
+    "files": {},
+    "turns": [
+      {
+        "user": "Fictional maintainer case. Three independently reviewed live runs found the same ITP failure: after a user had already made an explicit choice, the agent asked them to choose again. Treat this as a possible reusable improvement to ITP. Do not edit shared skill sources in this virtual run; explain the smallest proposed behavior change and how it should be validated.",
+        "checks": {
+          "forbid_prefix": [
+            "skills/",
+            ".p2p/"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Treats repeated reviewed failures as stronger evidence than a one-off anecdote while still avoiding unsupported certainty.",
+      "Proposes the smallest relevant ITP behavior change and a regression/evaluation case before promotion.",
+      "Does not claim the shared skill was changed or the improvement passed evaluation when neither action occurred."
+    ]
   }
 ]
