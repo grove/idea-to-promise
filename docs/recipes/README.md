@@ -13,6 +13,7 @@ Each recipe follows the same simple structure: **situation → command → what 
 | Learn before committing to a solution | [Choose an experiment first](experiment.md) |
 | Decide whether we should build anything at all | [Reach a no-build decision](no-build.md) |
 | Continue work from an earlier session | [Resume discovery](resume.md) |
+| Step back after a long period of execution and reassess priorities | [Zoom out to the bigger picture](zoom-out.md) |
 | Reconsider an approved promise because circumstances changed | [Revisit a promise](revisit.md) |
 | Handle a P2P finding that may mean the promise itself is wrong | [Amend from P2P feedback](amend-from-p2p.md) |
 | Check whether delivered behavior actually improved the real outcome | [Review the outcome](outcome-review.md) |

@@ -74,7 +74,7 @@ Promise to Proof
 implementation + review + proof
 ```
 
-ITP can also revisit an old promise, classify feedback coming back from P2P, and review whether delivered behavior actually improved the original real-world outcome.
+ITP can also **zoom out** after a long stretch of work and ask whether the project is still focused on the right outcomes and priorities. It can revisit an old promise, classify feedback coming back from P2P, and review whether delivered behavior actually improved the original real-world outcome.
 
 ## What should I read next?
 
@@ -92,6 +92,7 @@ For maintainers and advanced users, the deeper protocol, artifact, security, eva
 | Think about a small reversible change | `/discover quick <idea>` |
 | Work through an expensive or hard-to-reverse choice | `/discover deep <idea>` |
 | Continue previous discovery | `/discover resume .itp/work/<slug>` |
+| Step back and reassess the whole project | `/discover zoom-out` |
 | Reconsider an approved promise | `/discover revisit specs/<slug>.md` |
 | Handle a P2P finding that may change the promise | `/discover amend specs/<slug>.md; trigger <evidence>` |
 | Check whether delivered work actually helped | `/discover outcome specs/<slug>.md; evidence <observations>` |

@@ -1,7 +1,7 @@
 # Discovery session: <name>
 
 Mode: <quick / normal / deep>
-Activity: <discover / resume / revisit / amend / outcome>
+Activity: <discover / resume / zoom-out / revisit / amend / outcome>
 Budget: <user-specified bounds or not specified>
 Current question:
 Settled choices and source references:

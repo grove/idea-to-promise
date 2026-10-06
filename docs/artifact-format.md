@@ -4,7 +4,7 @@ Use the smallest durable record that preserves the decision. Quick discovery may
 use `.itp/work/<slug>/discovery.md` with Need, Options, Evidence and unknowns,
 Decision, Next. A pending choice stays pending. Normal/deep work may use frame.md,
 alternatives.md, research.md, experiments/, decision.md and challenge.md.
-`session.md` is optional resume context, not executable workflow state.
+`session.md` is optional resume context, not executable workflow state. A project-level strategic review may also retain `zoom-out.md` when that review will help later decisions.
 
 Canonical [templates](../templates/discovery.md) are aids, not mandatory forms.
 Every installed skill carries the relevant copies and the same protocol.
@@ -91,6 +91,18 @@ and decision impact.
 Allowed outcome states are improved, mixed, no-improvement and not-assessed.
 Without direct/attributed outcome observations, use not-assessed even when P2P proof
 is green. Outcome review never mutates the approved promise.
+
+## Zoom-out reviews
+
+`zoom-out.md` is an optional advisory project-level review. It can record the
+project's intended outcomes, material changes, current attention, work that may
+deserve less focus, missed opportunities, strategic options, recommendation, and
+the next human choice.
+
+It is deliberately not an active decision record. A zoom-out review does not
+supersede `decision.md`, mutate an approved promise, authorize implementation, or
+create new scope. If the human chooses a material change, use the normal
+decision/revisit/amend path and preserve existing history.
 
 ## Structural status
 

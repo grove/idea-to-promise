@@ -16,6 +16,7 @@ If you remember only that, you can still use ITP successfully.
 | Small, reversible question | `/discover quick <idea>` |
 | Important, expensive, or difficult-to-reverse choice | `/discover deep <idea>` |
 | Continue previous work | `/discover resume .itp/work/<slug>` |
+| Step back and reassess the whole project | `/discover zoom-out` |
 | Reconsider an approved promise | `/discover revisit specs/<slug>.md` |
 | P2P found something that may require changing the promise | `/discover amend specs/<slug>.md; trigger <evidence>` |
 | Review whether delivered work actually improved the outcome | `/discover outcome specs/<slug>.md; evidence <observations>` |
@@ -59,3 +60,14 @@ Choosing the direction does not approve the final promise wording.
 
 **Delivery proof is not outcome proof.**  
 P2P can prove the behavior was delivered. Real-world evidence is still needed to know whether the intended outcome improved.
+
+
+## When to zoom out
+
+Use `/discover zoom-out` when you have been executing for a while and want to ask a bigger question:
+
+> **Are we still spending our attention on the right things?**
+
+Zoom-out looks across the project's goals, current work, decisions, promises, delivery/outcome evidence, changed constraints, and opportunities that may have been crowded out. It recommends whether to continue, change focus, validate something important, stop/defer work, revisit an existing promise, or start a new discovery.
+
+It does **not** silently change existing decisions or promises.

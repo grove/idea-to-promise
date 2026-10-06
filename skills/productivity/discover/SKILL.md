@@ -1,6 +1,6 @@
 ---
 name: discover
-description: Guide adaptive discovery, resume/revisit approved work, classify delivery feedback, and review real-world outcomes without taking the human decision.
+description: Guide adaptive discovery, project zoom-outs, resume/revisit approved work, delivery feedback, and outcome review without taking the human decision.
 license: Apache-2.0
 metadata:
   version: "0.6.0"
@@ -49,11 +49,36 @@ A useful default shape is:
 
 Do not force these headings when a natural shorter answer works better.
 
-## Start, resume, revisit, amend, or review outcome
+## Start, resume, zoom out, revisit, amend, or review outcome
 
 For `resume <work item>`, read existing records/session and continue at the next
 unanswered question without repeating settled interviews or choices. Tell the user
 what is already settled in plain language, then focus on the one thing that remains.
+
+For `zoom-out`, step back from the current task and review the project as a whole.
+Also recognize natural requests such as "step back", "look at the bigger picture",
+"are we still working on the right things?", or "what should we focus on next?"
+as zoom-out intent when the project context is clear.
+
+Start from the project's original/current outcomes, active decisions and promises,
+delivery/outcome evidence, changed constraints, and the work currently consuming
+attention. Look for:
+
+- what still matters most;
+- what has materially changed;
+- work that may deserve less attention despite sunk effort;
+- important needs or opportunities that have been crowded out;
+- whether current priorities still match the intended outcomes.
+
+Do not reopen every settled choice by default. Distinguish "we spent a lot on this"
+from "this is still the best next use of effort." Produce a small set of strategic
+options such as continue, change focus, validate/experiment, defer/stop, revisit an
+existing promise, or open a new discovery. Explain them simply and recommend the
+strongest direction or shortlist.
+
+A zoom-out review is advisory. It may save `zoom-out.md` when a durable review is
+useful, but it must not silently supersede a decision, amend an approved promise,
+or create new scope. End with one obvious human choice or next move.
 
 For `revisit <source>`, compare the original decision/approval with changed
 evidence, needs, constraints and revisit triggers. Preserve the active promise and

@@ -151,6 +151,24 @@ For example, research may show that the product already has a feature that solve
 
 Likewise, you can end with a bounded experiment if you are not ready to promise a solution yet.
 
+## When you have been working for a long time
+
+Sometimes the useful question is not "what should we do with this feature?" but:
+
+> **Are we still working on the right things?**
+
+Use:
+
+```text
+/discover zoom-out
+```
+
+You can also just say something natural like "We’ve been working on this for months. Help me step back and look at the bigger picture."
+
+ITP should review the project's original goals, what has changed, where effort is going, what may now deserve less attention, and what important opportunities might have disappeared from view. It should then give you a few understandable strategic directions and recommend one.
+
+A zoom-out review does not silently rewrite decisions or promises. If you choose a material change, ITP takes that choice through the normal decision or revisit path.
+
 ## You usually only need `/discover`
 
 The individual skills—`/frame`, `/brainstorm`, `/research`, `/decide`, `/challenge-decision`, and `/shape-promise`—are useful when you want to work directly on one stage. They are not a checklist you need to run manually every time.

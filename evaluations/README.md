@@ -116,3 +116,8 @@ Semantic review should also judge whether a technically correct reply is pleasan
 A good reply should make three things easy to understand: **where we are, what ITP recommends, and what the user should do next**. Internal IDs, hashes, checker output, file inspection, and protocol terminology should stay in the background unless they help the current decision or the user asks for them.
 
 Do not give a semantic pass merely because the underlying state transition is correct. A response can be behaviorally wrong if the user has to decode the workflow to know what to do next.
+
+
+## Zoom-out cases
+
+The suite also checks the ability to step back from long-running execution without turning the result into a status report. A good zoom-out should reconnect current work to the intended outcomes, distinguish sunk effort from future value, notice crowded-out opportunities, present a few understandable strategic directions, make a recommendation, and preserve active decisions/promises until the human deliberately changes them.

@@ -167,6 +167,54 @@ contract", "handoff pending", and raw "blocked" status in normal user-facing
 prose. They may appear in logs or diagnostic/reference output, but the default
 conversation should explain the situation rather than expose workflow machinery.
 
+## Zoom out to the bigger picture
+
+Long-running work creates tunnel vision. ITP can deliberately step back from the
+current task and ask whether the project is still spending attention on the right
+things.
+
+Use `/discover zoom-out`, or recognize natural language such as "step back",
+"look at the bigger picture", "are we still working on the right things?", and
+"what should we focus on next?" when the project context is clear.
+
+A zoom-out review should synthesize the smallest useful set of project evidence:
+
+- the original and current intended outcomes;
+- active decisions and approved promises that still shape the work;
+- delivery and real-world outcome observations, when available;
+- material changes in users, constraints, environment, or strategy;
+- where current effort is going;
+- important opportunities or problems that may have been crowded out.
+
+Do not equate activity, sunk cost, or implementation progress with importance.
+Do not restart every discovery thread or reopen every approved promise merely
+because a zoom-out was requested.
+
+The review should answer, in plain language:
+
+1. **What still matters most?**
+2. **What has changed?**
+3. **What may deserve less attention now?**
+4. **What might we be missing?**
+5. **What are the few sensible directions from here?**
+6. **What does ITP recommend, and why?**
+
+Present the strategic directions as simple alternatives with the usual strongest
+reason, main downside, and recommendation. Appropriate directions can include
+continue, narrow/change focus, validate an important unknown, defer/stop work,
+revisit an existing promise, or open a new discovery around a newly important
+opportunity.
+
+A zoom-out review is advisory by default. It may be retained as `zoom-out.md`
+when that helps future reasoning, but it does not itself supersede an active
+decision, change an approved promise, authorize implementation, or create a new
+promise. If the human chooses a material change, continue through the normal
+decision/revisit/amend path.
+
+End with one obvious next human action. The value of zoom-out is not producing a
+status report; it is helping the user decide whether attention should stay where it
+is or move somewhere better.
+
 ## Depth and budgets
 
 `quick` is for a small, reversible question with adequate context. Use a short

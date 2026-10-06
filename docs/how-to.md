@@ -31,6 +31,20 @@ For team decisions record only ownership needed to make the choice valid: decisi
 owner, material consulted/affected roles, and expected exact-promise approver.
 Do not force these fields for solo work. Participation is not authority.
 
+## Zoom out when execution creates tunnel vision
+
+After a long period of project work, use:
+
+```text
+/discover zoom-out
+```
+
+Natural requests such as "step back", "look at the bigger picture", or "are we still working on the right things?" should behave the same way.
+
+Zoom-out reviews the project's intended outcomes, active decisions/promises, delivery and outcome evidence, material changes, current work, and opportunities that may have been crowded out. It should distinguish future value from sunk effort, present a few strategic directions, recommend a path, and end with one clear human choice.
+
+The review is advisory. It may save `zoom-out.md` when useful, but it does not itself supersede a decision, amend an approved promise, or create new scope. A chosen material change continues through normal discovery/revisit/amend semantics.
+
 ## Resume or revisit
 
 ```text

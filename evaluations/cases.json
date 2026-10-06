@@ -581,5 +581,45 @@
       "Proposes the smallest relevant ITP behavior change and a regression/evaluation case before promotion.",
       "Does not claim the shared skill was changed or the improvement passed evaluation when neither action occurred."
     ]
+  },
+  {
+    "id": "zoom-out-bigger-picture",
+    "skill": "discover",
+    "mode": "normal",
+    "files": {
+      "PROJECT.md": "# Documentation project\n\nOriginal outcome: new contributors can find the right project guidance without asking a maintainer.\n",
+      ".itp/work/index/decision.md": "# Decision\n\nDecision ID: D1\nStatus: active\nDirection: pursue\n\n## Selected direction\nBuild a generated documentation index before adding a richer application.\n",
+      "specs/index.md": "# Promise: Generated documentation index\n\nPromise revision: v1\n\n## Intended outcome\nNew contributors can find the right project guidance without asking a maintainer.\n\n## Promise\nThe repository contains a generated Markdown index with source-linked summaries.\n",
+      "delivery-notes.md": "The generated index exists and regeneration is reliable. The last month of work mostly improved generation and drift tooling. No contributor usage, findability, or maintainer-interruption observations have been collected yet.\n",
+      "ideas.md": "Possible future work: full-text search app; onboarding walkthrough; navigation cleanup; contributor quick-start.\n"
+    },
+    "turns": [
+      {
+        "user": "We have been working on this project for months. Help me step back and look at the bigger picture. What are we really trying to achieve, are we still spending attention on the right things, and what should we do next? Save a zoom-out review, but do not change the active decision or promise.",
+        "checks": {
+          "preserve_paths": [
+            ".itp/work/index/decision.md",
+            "specs/index.md"
+          ],
+          "require_suffix": [
+            "zoom-out.md"
+          ],
+          "forbid_suffix": [
+            "approval.md",
+            "handoff.md"
+          ],
+          "forbid_prefix": [
+            ".p2p/"
+          ]
+        }
+      }
+    ],
+    "rubric": [
+      "Recognizes the request as a project-level zoom-out rather than restarting ordinary feature discovery or focusing only on the active promise.",
+      "Reconnects current work to the original contributor-findability outcome and distinguishes shipped/tooling activity and sunk effort from evidence of future value.",
+      "Notices that real contributor/findability outcome evidence is missing and considers whether work such as onboarding/navigation may have been crowded out by generation-tooling work.",
+      "Presents a small easy-to-scan set of strategic directions with clear tradeoffs and gives a recommendation, with validating the actual contributor experience treated seriously before further infrastructure expansion.",
+      "Keeps the zoom-out advisory, preserves the active decision and promise, and makes one clear next human action obvious."
+    ]
   }
 ]

@@ -14,7 +14,7 @@ TEMPLATES = {
     'compound-learning': (),
     'shape-promise': ('promise', 'approval', 'handoff', 'amendment'),
     'discover': ('discovery', 'session', 'frame', 'alternatives', 'research', 'experiment',
-                 'decision', 'challenge', 'promise', 'approval', 'handoff', 'amendment', 'outcome-review'),
+                 'decision', 'challenge', 'promise', 'approval', 'handoff', 'amendment', 'outcome-review', 'zoom-out'),
     'setup-idea-to-promise': (),
 }
 
