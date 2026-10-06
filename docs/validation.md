@@ -15,8 +15,8 @@ There are several distinct evidence levels; do not collapse them.
 
 ## What v0.6 establishes
 
-GitHub Actions passed the release/resource checks and 59 unit tests on Python
-3.11, 3.12 and 3.13 for the tested v0.6 branch. The 17-case evaluation suite also
+GitHub Actions passed the release/resource checks and 67 unit tests on Python
+3.11, 3.12 and 3.13 for the tested v0.6 branch. The 21-case evaluation suite also
 prepared successfully without invoking a model.
 
 The checks cover, among other things:
@@ -28,7 +28,8 @@ The checks cover, among other things:
 - team-ownership/amendment/outcome-review case presence;
 - read-only work-item status inspection;
 - descriptive friction accounting;
-- conversation ergonomics: plain-language resume, obvious next actions, inviting exact approval, and graceful recovery from premature downstream requests.
+- conversation ergonomics: plain-language resume, obvious next actions, inviting exact approval, and graceful recovery from premature downstream requests;
+- project zoom-out behavior: reconnecting current work to intended outcomes, distinguishing sunk effort from future value, surfacing crowded-out opportunities, recommending a strategic direction, and preserving active decisions/promises until the human changes them.
 
 An initial v0.6 branch run caught an incorrect helper API call in the new work-item
 inspector; the implementation was corrected and the complete matrix passed before
